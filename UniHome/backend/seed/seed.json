@@ -1,0 +1,2889 @@
+{
+  "CoSo": [
+    {
+      "_id": {
+        "$oid": "6acbc83c2855a73c62448ce6"
+      },
+      "maCoSo": "CS01",
+      "tenCoSo": "UniHome Thanh Xuân",
+      "khuVuc": "Thanh Xuân",
+      "diaChi": "Thanh Xuân, Hà Nội ",
+      "soTang": {
+        "$numberInt": "8"
+      },
+      "soPhongMoiTang": {
+        "$numberInt": "2"
+      },
+      "tongSoPhong": {
+        "$numberInt": "14"
+      },
+      "toaDo": {
+        "type": "Point",
+        "coordinates": [
+          {
+            "$numberDouble": "105.805"
+          },
+          {
+            "$numberDouble": "20.995"
+          }
+        ]
+      },
+      "giaDien": {
+        "$numberInt": "3500"
+      },
+      "giaNuoc": {
+        "$numberInt": "100000"
+      },
+      "donViNuoc": "nguoi/thang",
+      "tienCocThang": {
+        "$numberInt": "1"
+      },
+      "noiQuy": [
+        "Giữ vệ sinh chung",
+        "Không gây ồn sau 22 giờ",
+        "Không tự ý sửa chữa phòng"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6acbc83c2855a73c62448ce7"
+      },
+      "maCoSo": "CS02",
+      "tenCoSo": "UniHome Hoàng Mai",
+      "khuVuc": "Hoàng Mai",
+      "diaChi": "Hoàng Mai, Hà Nội ",
+      "soTang": {
+        "$numberInt": "7"
+      },
+      "soPhongMoiTang": {
+        "$numberInt": "2"
+      },
+      "tongSoPhong": {
+        "$numberInt": "12"
+      },
+      "toaDo": {
+        "type": "Point",
+        "coordinates": [
+          {
+            "$numberDouble": "105.85"
+          },
+          {
+            "$numberDouble": "20.975"
+          }
+        ]
+      },
+      "giaDien": {
+        "$numberInt": "3600"
+      },
+      "giaNuoc": {
+        "$numberInt": "100000"
+      },
+      "donViNuoc": "nguoi/thang",
+      "tienCocThang": {
+        "$numberInt": "1"
+      },
+      "noiQuy": [
+        "Giữ vệ sinh chung",
+        "Không gây ồn sau 22 giờ",
+        "Không tự ý sửa chữa phòng"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6acbc83c2855a73c62448ce8"
+      },
+      "maCoSo": "CS03",
+      "tenCoSo": "UniHome Cầu Giấy",
+      "khuVuc": "Cầu Giấy",
+      "diaChi": "Cầu Giấy, Hà Nội ",
+      "soTang": {
+        "$numberInt": "8"
+      },
+      "soPhongMoiTang": {
+        "$numberInt": "2"
+      },
+      "tongSoPhong": {
+        "$numberInt": "14"
+      },
+      "toaDo": {
+        "type": "Point",
+        "coordinates": [
+          {
+            "$numberDouble": "105.795"
+          },
+          {
+            "$numberDouble": "21.035"
+          }
+        ]
+      },
+      "giaDien": {
+        "$numberInt": "3500"
+      },
+      "giaNuoc": {
+        "$numberInt": "90000"
+      },
+      "donViNuoc": "nguoi/thang",
+      "tienCocThang": {
+        "$numberInt": "1"
+      },
+      "noiQuy": [
+        "Giữ vệ sinh chung",
+        "Không gây ồn sau 22 giờ",
+        "Không tự ý sửa chữa phòng"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6acbc83c2855a73c62448ce9"
+      },
+      "maCoSo": "CS04",
+      "tenCoSo": "UniHome Hà Đông",
+      "khuVuc": "Hà Đông",
+      "diaChi": "Hà Đông, Hà Nội ",
+      "soTang": {
+        "$numberInt": "7"
+      },
+      "soPhongMoiTang": {
+        "$numberInt": "2"
+      },
+      "tongSoPhong": {
+        "$numberInt": "12"
+      },
+      "toaDo": {
+        "type": "Point",
+        "coordinates": [
+          {
+            "$numberDouble": "105.775"
+          },
+          {
+            "$numberDouble": "20.97"
+          }
+        ]
+      },
+      "giaDien": {
+        "$numberInt": "3400"
+      },
+      "giaNuoc": {
+        "$numberInt": "100000"
+      },
+      "donViNuoc": "nguoi/thang",
+      "tienCocThang": {
+        "$numberInt": "1"
+      },
+      "noiQuy": [
+        "Giữ vệ sinh chung",
+        "Không gây ồn sau 22 giờ",
+        "Không tự ý sửa chữa phòng"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6acbc83c2855a73c62448cea"
+      },
+      "maCoSo": "CS05",
+      "tenCoSo": "UniHome Đống Đa",
+      "khuVuc": "Đống Đa",
+      "diaChi": "Đống Đa, Hà Nội",
+      "soTang": {
+        "$numberInt": "8"
+      },
+      "soPhongMoiTang": {
+        "$numberInt": "2"
+      },
+      "tongSoPhong": {
+        "$numberInt": "14"
+      },
+      "toaDo": {
+        "type": "Point",
+        "coordinates": [
+          {
+            "$numberDouble": "105.825"
+          },
+          {
+            "$numberDouble": "21.02"
+          }
+        ]
+      },
+      "giaDien": {
+        "$numberInt": "3500"
+      },
+      "giaNuoc": {
+        "$numberInt": "100000"
+      },
+      "donViNuoc": "nguoi/thang",
+      "tienCocThang": {
+        "$numberInt": "1"
+      },
+      "noiQuy": [
+        "Giữ vệ sinh chung",
+        "Không gây ồn sau 22 giờ",
+        "Không tự ý sửa chữa phòng"
+      ]
+    }
+  ],
+  "Phong": [
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d7c"
+      },
+      "maPhong": "CS01-P201",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 201 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "201",
+      "giaThue": {
+        "$numberInt": "2950000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Ban công",
+        "Giường"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751138/UniHome/CS01/P201/drive-1J_7KaobQNID6Ten1YLsymjRCF6VaGcRI.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751139/UniHome/CS01/P201/drive-1Nh8eJtjZQE2Px1f9hna1A0eQmOFAK3Bm.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751140/UniHome/CS01/P201/drive-1nR5vKWM1Oaj6rCpZZtK0jXcMdfoj0dey.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751141/UniHome/CS01/P201/drive-1qQxnu_11JLBNSEltGEJXa3L0NGok8573.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751142/UniHome/CS01/P201/drive-1x45ZHoHDg_yb1yEAi2Iio7sQ1gy-gO2-.jpg"
+      ],
+      "moTa": "Phòng 201, tầng 2, cơ sở UniHome Thanh Xuân; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d7d"
+      },
+      "maPhong": "CS01-P202",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 202 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "202",
+      "giaThue": {
+        "$numberInt": "2910000"
+      },
+      "dienTich": {
+        "$numberInt": "18"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Tủ quần áo",
+        "Máy giặt chung"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751143/UniHome/CS01/P202/drive-13BkrA-EctD71wbUkbO9gYMqThqzCKUtJ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751143/UniHome/CS01/P202/drive-1afdkFFy0zlsrZ5ffwwOXFNGZkkfhvF2W.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751144/UniHome/CS01/P202/drive-1b_IcrB5dF-N25tmMTsvzfQA0TCcRqVwM.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751145/UniHome/CS01/P202/drive-1k09T6eHBuPK2RItXEAl851ZumWK7EAxB.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751146/UniHome/CS01/P202/drive-1w3aEaBtsKwIBQea5vFD-xjpMFoNfg7_a.jpg"
+      ],
+      "moTa": "Phòng 202, tầng 2, cơ sở UniHome Thanh Xuân; diện tích 18 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d7e"
+      },
+      "maPhong": "CS01-P301",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 301 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "301",
+      "giaThue": {
+        "$numberInt": "2860000"
+      },
+      "dienTich": {
+        "$numberInt": "18"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Tủ quần áo",
+        "Bàn học"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751146/UniHome/CS01/P301/drive-16lPBR0cDDWBrIVIgPtPyRzIOESDa2deB.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751147/UniHome/CS01/P301/drive-1KyGslekqKqapY-KWkZ_dZ2yg-FnYGtna.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751148/UniHome/CS01/P301/drive-1dk0wTLKhm79ANsGS0FX8ipdTSXI6MTSh.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751148/UniHome/CS01/P301/drive-1oZkSAfL1Dl_BcKJiyVDhsAnQmD1Su-mA.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751149/UniHome/CS01/P301/drive-1qwnuvnhGL1u7xWPI48XdsVR0lzoW6CW0.jpg"
+      ],
+      "moTa": "Phòng 301, tầng 3, cơ sở UniHome Thanh Xuân; diện tích 18 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d7f"
+      },
+      "maPhong": "CS01-P302",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 302 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "302",
+      "giaThue": {
+        "$numberInt": "3660000"
+      },
+      "dienTich": {
+        "$numberInt": "28"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Ban công",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751150/UniHome/CS01/P302/drive-11xgN9qssNpLlqLOlM-LpIo2jYN6yt_DH.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751150/UniHome/CS01/P302/drive-1BX0J510nOu0QEqNwno2BHCZ-U0ScgT2A.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751151/UniHome/CS01/P302/drive-1oSg8j-0UqomK3jWtkdvsmX7lUsidL4a_.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751152/UniHome/CS01/P302/drive-1qJsFJ1o1b2zSMAcd9_7S4eqd-trI8ecp.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751153/UniHome/CS01/P302/drive-1xFzrMWRu8Z3ozDpPqLZvrEGGUbMYf05o.jpg"
+      ],
+      "moTa": "Phòng 302, tầng 3, cơ sở UniHome Thanh Xuân; diện tích 28 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d80"
+      },
+      "maPhong": "CS01-P401",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 401 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "401",
+      "giaThue": {
+        "$numberInt": "3400000"
+      },
+      "dienTich": {
+        "$numberInt": "25"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Tủ quần áo",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751153/UniHome/CS01/P401/drive-1RUfak7pe54om2YLHoUVTeCvtblZnBziJ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751154/UniHome/CS01/P401/drive-1WEHWVByl7H0iCOpwCTTqow2qGJZ5P0GF.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751155/UniHome/CS01/P401/drive-1cpU-xK3xm0M-5MlRJum_ve4a0AAmWlKg.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751155/UniHome/CS01/P401/drive-1iA6aTLsS2qP7u5I4TRdPhg479QIIBYia.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751156/UniHome/CS01/P401/drive-1n59kZn8ZZyfNMWoE9wcd336_ddlVq902.jpg"
+      ],
+      "moTa": "Phòng 401, tầng 4, cơ sở UniHome Thanh Xuân; diện tích 25 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d81"
+      },
+      "maPhong": "CS01-P402",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 402 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "402",
+      "giaThue": {
+        "$numberInt": "3710000"
+      },
+      "dienTich": {
+        "$numberInt": "28"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Máy giặt chung",
+        "Giường",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751157/UniHome/CS01/P402/drive-1HWfGKhCuFmA-vBfMBCMjgpoyyYDK0rp8.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751157/UniHome/CS01/P402/drive-1UZxQ-WNWgUNhRhTohi5e1fGHeGMZ_QRI.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751158/UniHome/CS01/P402/drive-1VnSr00YhOHbHIROl7tADFKlt2th1dMnV.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751158/UniHome/CS01/P402/drive-1dXq8iAlGOjq2cCRgr8QTaZm_vo-nWx28.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751159/UniHome/CS01/P402/drive-1qqTLy0T5cZXklvchAy0gbWOWMYWBiFDf.jpg"
+      ],
+      "moTa": "Phòng 402, tầng 4, cơ sở UniHome Thanh Xuân; diện tích 28 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d82"
+      },
+      "maPhong": "CS01-P501",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 501 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "501",
+      "giaThue": {
+        "$numberInt": "3380000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Giường",
+        "Ban công",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751160/UniHome/CS01/P501/drive-1FKdaTOPKle33q6Gkg1Sp42JuT1mlmgV8.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751161/UniHome/CS01/P501/drive-1MIw9O4fiOrjjdaIcvKtOB-w7kwaAziBv.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751162/UniHome/CS01/P501/drive-1T7CacnSdvkr42BiIQP4tINdR4uF0QTKh.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751163/UniHome/CS01/P501/drive-1YGCNTnJat3_lBe-hsjFW7jVR98IRXM1W.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751164/UniHome/CS01/P501/drive-1ojJLjepLUPmx1_nAC_CCh4Au1XRiYe46.jpg"
+      ],
+      "moTa": "Phòng 501, tầng 5, cơ sở UniHome Thanh Xuân; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d83"
+      },
+      "maPhong": "CS01-P502",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 502 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "502",
+      "giaThue": {
+        "$numberInt": "3760000"
+      },
+      "dienTich": {
+        "$numberInt": "28"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Bàn học",
+        "Tủ quần áo",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [],
+      "moTa": "Phòng 502, tầng 5, cơ sở UniHome Thanh Xuân; diện tích 28 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d84"
+      },
+      "maPhong": "CS01-P601",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 601 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "601",
+      "giaThue": {
+        "$numberInt": "3500000"
+      },
+      "dienTich": {
+        "$numberInt": "25"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Ban công",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [],
+      "moTa": "Phòng 601, tầng 6, cơ sở UniHome Thanh Xuân; diện tích 25 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d85"
+      },
+      "maPhong": "CS01-P602",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 602 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "602",
+      "giaThue": {
+        "$numberInt": "3250000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Giường",
+        "Bàn học"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751164/UniHome/CS01/P602/drive-11W-pYBdb1nGLMYoO3-mKw03OIWvW8fIQ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751165/UniHome/CS01/P602/drive-1IMw0W8yDPBdVn9xL872LXqRsL5xVAXop.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751166/UniHome/CS01/P602/drive-1J7bl-nKvn2iUoT77UVHM2ORjDHnF3r5C.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751166/UniHome/CS01/P602/drive-1bPcSvNchpYWKCrZ1Vy3AVY5jJGo-EH_j.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751167/UniHome/CS01/P602/drive-1fPaxn7TFMdiAUY3JHjX3CO0DYYS0tadE.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751168/UniHome/CS01/P602/drive-1wTS1FBixeW47ycuGKEEW2wei3GvU--mj.jpg"
+      ],
+      "moTa": "Phòng 602, tầng 6, cơ sở UniHome Thanh Xuân; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d86"
+      },
+      "maPhong": "CS01-P701",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 701 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "701",
+      "giaThue": {
+        "$numberInt": "3550000"
+      },
+      "dienTich": {
+        "$numberInt": "25"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Bàn học",
+        "Ban công",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751168/UniHome/CS01/P701/drive-1Kr9kApoTO0HQVGbI43ftipa7O_XtD9NP.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751169/UniHome/CS01/P701/drive-1VvCLrqcZdx0tGIdv72C7t88nwB8xvlR-.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751170/UniHome/CS01/P701/drive-1mK2KKlovN2fkJUoxqPKpMZ8pU-MNGnw3.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751170/UniHome/CS01/P701/drive-1xT3Fp1oacdI7oeaWVMXRALymKimFqCx_.jpg"
+      ],
+      "moTa": "Phòng 701, tầng 7, cơ sở UniHome Thanh Xuân; diện tích 25 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d87"
+      },
+      "maPhong": "CS01-P702",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 702 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "702",
+      "giaThue": {
+        "$numberInt": "3580000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Máy giặt chung",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751171/UniHome/CS01/P702/drive-1Dk5LXblV1ghNTXbgnzs27S83U0a10MV-.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751172/UniHome/CS01/P702/drive-1FAybUOoqY9NIT6U8jhw7Epqt76ubxK6z.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751173/UniHome/CS01/P702/drive-1QwRhxVCgoKtMhDy-QixF2ttRDL7o26yW.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751173/UniHome/CS01/P702/drive-1vHJHxyn3cAfsYsoL0D8rbrAfLnKXMK8t.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751174/UniHome/CS01/P702/drive-1wYkmIuBg32cXPKX4CRzqS9uxRj0hSTkE.jpg"
+      ],
+      "moTa": "Phòng 702, tầng 7, cơ sở UniHome Thanh Xuân; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d88"
+      },
+      "maPhong": "CS01-P801",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 801 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "8"
+      },
+      "soPhong": "801",
+      "giaThue": {
+        "$numberInt": "3530000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Giường",
+        "Ban công",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751174/UniHome/CS01/P801/drive-13Mb82LiBOtF36v6WBPdxT_zvKhUKg9qP.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751175/UniHome/CS01/P801/drive-17UDIT0YhplIur4GtOpYoVhpFfZGgJMP9.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751176/UniHome/CS01/P801/drive-1D65zTHeN1kQbtP3CDvxmKvfhsoljyVnG.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751177/UniHome/CS01/P801/drive-1gNexRkJNAyi5XrbUsRJcPw4krTzcMoL-.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751178/UniHome/CS01/P801/drive-1iuMgyODwaznnh5rpymqu0-QOAUsNmeCt.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751178/UniHome/CS01/P801/drive-1ku216dsx4YE9MQcJ5WJD_lSk9yFXpvVL.jpg"
+      ],
+      "moTa": "Phòng 801, tầng 8, cơ sở UniHome Thanh Xuân; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d89"
+      },
+      "maPhong": "CS01-P802",
+      "maCoSo": "CS01",
+      "tenPhong": "Phòng 802 - UniHome Thanh Xuân",
+      "tang": {
+        "$numberInt": "8"
+      },
+      "soPhong": "802",
+      "giaThue": {
+        "$numberInt": "3350000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Bàn học",
+        "Tủ quần áo"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751179/UniHome/CS01/P802/drive-1QG_3vvmVHdAJdim7RwHhotom6sAvuWyF.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751180/UniHome/CS01/P802/drive-1YtUDK2TJZg_cFOY2fV2pZXmpgD4sAIWm.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751180/UniHome/CS01/P802/drive-1cEUgIxYOzj-qJPsWAWmdHo3Q3ISabKRq.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751181/UniHome/CS01/P802/drive-1fCGhwWS2nfrT_4VNlM0IcM-uSHt2JZrX.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751182/UniHome/CS01/P802/drive-1gRcVs4PNviMOXDwgA69hIjS-uW_TCnx1.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751182/UniHome/CS01/P802/drive-1nxz8Qc0Vt-FEIsrkvESGeHwdXFPVospl.jpg"
+      ],
+      "moTa": "Phòng 802, tầng 8, cơ sở UniHome Thanh Xuân; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d8a"
+      },
+      "maPhong": "CS02-P201",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 201 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "201",
+      "giaThue": {
+        "$numberInt": "2690000"
+      },
+      "dienTich": {
+        "$numberInt": "22"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Tủ quần áo",
+        "Giường"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751183/UniHome/CS02/P201/drive-11fbJsR8VuRwl-bARG7aTzQBe_96Pa13I.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751184/UniHome/CS02/P201/drive-1FlNBIPnVEopCjeVWglG5na2yq6wLLkt3.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751184/UniHome/CS02/P201/drive-1a-4F4r84PWvt1FnV0vNqMkZG1bAOTY8J.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751185/UniHome/CS02/P201/drive-1aOPiDMlYDNJ5paFj_OVr8fvyjUCaXwj2.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751185/UniHome/CS02/P201/drive-1df02LTx_CXWjux5WAmNJ9DvmWxHbbrR2.jpg"
+      ],
+      "moTa": "Phòng 201, tầng 2, cơ sở UniHome Hoàng Mai; diện tích 22 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d8b"
+      },
+      "maPhong": "CS02-P202",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 202 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "202",
+      "giaThue": {
+        "$numberInt": "3350000"
+      },
+      "dienTich": {
+        "$numberInt": "30"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Bàn học",
+        "Máy giặt chung",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751186/UniHome/CS02/P202/drive-1GEp53RjLMEdoa9w6AOOzu4Baaqzxc5hk.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751187/UniHome/CS02/P202/drive-1TI3zyxR2PxDGxuP_HDRrLDZtbr_7_l7_.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751187/UniHome/CS02/P202/drive-1jKYulXSsFVIzGESeP0hlWHzRQeO0-o3u.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751188/UniHome/CS02/P202/drive-1jd5f2HDqZp2uG80Oow_Rk5WOmDRSRb73.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751189/UniHome/CS02/P202/drive-1xyCJ3H4q0OpMan_mxz2L_mXanQsq_pLD.jpg"
+      ],
+      "moTa": "Phòng 202, tầng 2, cơ sở UniHome Hoàng Mai; diện tích 30 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d8c"
+      },
+      "maPhong": "CS02-P301",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 301 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "301",
+      "giaThue": {
+        "$numberInt": "2880000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Giường",
+        "Ban công",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751189/UniHome/CS02/P301/drive-1GSbl1Z-w0VfCmhCBW5cPcMIJByCTD9Sa.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751190/UniHome/CS02/P301/drive-1KKslmdo8ttyQhSJBzrBqK12UuFAO8pmx.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751191/UniHome/CS02/P301/drive-1OjUVEdwuAJeU-O7A1brt0YHUrQsbIcx9.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751191/UniHome/CS02/P301/drive-1frd4wMXKuWflNQSARM5MN33sZeswAaSp.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751192/UniHome/CS02/P301/drive-1xtH_Y2t7RePEBPRXfonvxox0K3p8Llyb.jpg"
+      ],
+      "moTa": "Phòng 301, tầng 3, cơ sở UniHome Hoàng Mai; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d8d"
+      },
+      "maPhong": "CS02-P302",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 302 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "302",
+      "giaThue": {
+        "$numberInt": "2560000"
+      },
+      "dienTich": {
+        "$numberInt": "18"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Ban công",
+        "Tủ quần áo"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751193/UniHome/CS02/P302/drive-17lYz44JnNyFMfm2Mic0IPdzuI-8B-f4G.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751193/UniHome/CS02/P302/drive-19U6IaavU9ieOfTOk7DkDhDRBjXMLHQ2X.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751194/UniHome/CS02/P302/drive-1ONPZaeo-Xk2-x5CXWh7JrU_slMWOb3yz.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751195/UniHome/CS02/P302/drive-1o10NbcpAlcMuy2pVTudpRZHtCvxYh55l.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751195/UniHome/CS02/P302/drive-1pd5jF911nO_r6ng1y4TEyMRvJxe6poSI.jpg"
+      ],
+      "moTa": "Phòng 302, tầng 3, cơ sở UniHome Hoàng Mai; diện tích 18 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d8e"
+      },
+      "maPhong": "CS02-P401",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 401 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "401",
+      "giaThue": {
+        "$numberInt": "2650000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Bàn học",
+        "Giường"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751197/UniHome/CS02/P401/drive-154bihXJaLZ6U5Ai7UEcs3GyfD_tDTaGJ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751198/UniHome/CS02/P401/drive-1JIfM6B4FGS3qU_wukA1n4AYWZ-WLzzSO.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751198/UniHome/CS02/P401/drive-1KT269_qlDyej5suCoahj2UH1UN98Nt69.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751199/UniHome/CS02/P401/drive-1e3dailYRNQvN9rWW6QIrptUEiNnsPsUf.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751200/UniHome/CS02/P401/drive-1uSENbSNaQ2SmTeanx2jTVADgFVhnvhCs.jpg"
+      ],
+      "moTa": "Phòng 401, tầng 4, cơ sở UniHome Hoàng Mai; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d8f"
+      },
+      "maPhong": "CS02-P402",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 402 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "402",
+      "giaThue": {
+        "$numberInt": "3450000"
+      },
+      "dienTich": {
+        "$numberInt": "30"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Máy giặt chung",
+        "Giường",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751201/UniHome/CS02/P402/drive-1-48P9LkC2qkF7l_l_Ru3unH5ZYVeseTS.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751201/UniHome/CS02/P402/drive-1DaZ06vtiy5NP7SPDHDkwrfiuw2IUTM-A.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751202/UniHome/CS02/P402/drive-1MWJ6ICNT71eH8qtJH3GMMJt4qIRxgft9.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751203/UniHome/CS02/P402/drive-1zck5GGfvHyLqaSW1zhV69ZyKMzylF9Lb.jpg"
+      ],
+      "moTa": "Phòng 402, tầng 4, cơ sở UniHome Hoàng Mai; diện tích 30 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d90"
+      },
+      "maPhong": "CS02-P501",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 501 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "501",
+      "giaThue": {
+        "$numberInt": "3050000"
+      },
+      "dienTich": {
+        "$numberInt": "25"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Máy giặt chung",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751204/UniHome/CS02/P501/drive-1CaSu6ymnl6yDY8ZuWpGbeeqeIRFBvYJl.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751204/UniHome/CS02/P501/drive-1PXcbliF3bg2Cz5JoMwII3PgsnT8DDOwM.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751205/UniHome/CS02/P501/drive-1TtGRdFppE65hqxFodECmQ_LBXEqH6ydV.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751206/UniHome/CS02/P501/drive-1xvSH9pMMuUAv5UNUCm2XE25TJFQvqKs-.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751206/UniHome/CS02/P501/drive-1yLSjJfdNhn_Q7Oax0uebCrvXkpy-Pcc-.jpg"
+      ],
+      "moTa": "Phòng 501, tầng 5, cơ sở UniHome Hoàng Mai; diện tích 25 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d91"
+      },
+      "maPhong": "CS02-P502",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 502 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "502",
+      "giaThue": {
+        "$numberInt": "3150000"
+      },
+      "dienTich": {
+        "$numberInt": "25"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Ban công",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751207/UniHome/CS02/P502/drive-13OSTho8PmVEK4XFmt5kl4POeJUTaHBXa.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751208/UniHome/CS02/P502/drive-19_9vUTsUj4JUanz6rWWQfzRBVPLvMfEM.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751209/UniHome/CS02/P502/drive-1OlS4BBHssjeZyzzXKxSKFi4Qm1FW-dTn.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751209/UniHome/CS02/P502/drive-1XGNc5Fz1Pt70Pr6_7LRHvREpAVy08O0g.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751210/UniHome/CS02/P502/drive-1Xrx24_SfMNSs55e_xO66euMsFUoPTwWR.jpg"
+      ],
+      "moTa": "Phòng 502, tầng 5, cơ sở UniHome Hoàng Mai; diện tích 25 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d92"
+      },
+      "maPhong": "CS02-P601",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 601 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "601",
+      "giaThue": {
+        "$numberInt": "3310000"
+      },
+      "dienTich": {
+        "$numberInt": "28"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Tủ quần áo",
+        "Giường",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751211/UniHome/CS02/P601/drive-1Iq3F5u2wZQgQ2oyJ1nGX10zUQFLdZO5u.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751212/UniHome/CS02/P601/drive-1JXYhws6TFL_OXDoPllyFvnDI_t0r0J9-.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751213/UniHome/CS02/P601/drive-1PdLnHpPvzjS7bLFkBWKDzTYxULeBqKrr.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751214/UniHome/CS02/P601/drive-1jTEJOtsu7eNDXAeKn7Ypyl7Ys27kvYSq.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751214/UniHome/CS02/P601/drive-1s23Xx4tMJKpf-HslE1HefjMIYVfNG4zM.jpg"
+      ],
+      "moTa": "Phòng 601, tầng 6, cơ sở UniHome Hoàng Mai; diện tích 28 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d93"
+      },
+      "maPhong": "CS02-P602",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 602 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "602",
+      "giaThue": {
+        "$numberInt": "3550000"
+      },
+      "dienTich": {
+        "$numberInt": "30"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Máy giặt chung",
+        "Ban công",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751215/UniHome/CS02/P602/drive-11SiQyCYdfGzDTOG927y_EAxG2jxyHxf0.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751216/UniHome/CS02/P602/drive-1D5hToEBME3e5CIEsC3BwiIltfZ-bWqF2.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751216/UniHome/CS02/P602/drive-1TP51sDTh30Zbb8ag-ZcWOn47g1WalnqC.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751217/UniHome/CS02/P602/drive-1l7LWhIXVTptRu6M2uIVFcFF7pOtKBOvt.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751218/UniHome/CS02/P602/drive-1tuS7SMk6YxN5LHuHk2BZX7O10oNHCtxI.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751218/UniHome/CS02/P602/drive-1yPomVqGXD6HGU4tprR9J20eY7Y9ojisx.jpg"
+      ],
+      "moTa": "Phòng 602, tầng 6, cơ sở UniHome Hoàng Mai; diện tích 30 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d94"
+      },
+      "maPhong": "CS02-P701",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 701 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "701",
+      "giaThue": {
+        "$numberInt": "2940000"
+      },
+      "dienTich": {
+        "$numberInt": "22"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Ban công",
+        "Bàn học"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751219/UniHome/CS02/P701/drive-110zX04NHjjcptnvzwxS-4hVD1dIV3yov.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751220/UniHome/CS02/P701/drive-135RsONvw0FwvVlPSLftmU06gpibduZUS.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751221/UniHome/CS02/P701/drive-14c_lPqWIJ8zRheuoaSaqwkEsAbn3JV5T.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751222/UniHome/CS02/P701/drive-1JuHdzOmrifLEeBaVwI45UlA-4um6Rk_C.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751223/UniHome/CS02/P701/drive-1xNqTatp_8A7mLUCltaNs_yWK6hWBHC8V.jpg"
+      ],
+      "moTa": "Phòng 701, tầng 7, cơ sở UniHome Hoàng Mai; diện tích 22 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d95"
+      },
+      "maPhong": "CS02-P702",
+      "maCoSo": "CS02",
+      "tenPhong": "Phòng 702 - UniHome Hoàng Mai",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "702",
+      "giaThue": {
+        "$numberInt": "2900000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Máy giặt chung",
+        "Bàn học"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751223/UniHome/CS02/P702/drive-1Ti6oHB1t7wBuBKLslufnCqKEDxSklS7_.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751224/UniHome/CS02/P702/drive-1TobCKoC4la_XeyRYezbdy7jhiEDaKX9W.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751224/UniHome/CS02/P702/drive-1ToqQ7fSQmzKaWk5dRQlLj7kw2wcELux6.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751225/UniHome/CS02/P702/drive-1Ttf0WiDx61AfAxID4JK_FSLUIAzhWaeh.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751227/UniHome/CS02/P702/drive-1l6sKYsI0VhiXKNJ2yNfN6Mj7fvLHwVsK.jpg"
+      ],
+      "moTa": "Phòng 702, tầng 7, cơ sở UniHome Hoàng Mai; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d96"
+      },
+      "maPhong": "CS03-P201",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 201 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "201",
+      "giaThue": {
+        "$numberInt": "3840000"
+      },
+      "dienTich": {
+        "$numberInt": "27"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Bàn học",
+        "Tủ quần áo",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751228/UniHome/CS03/P201/drive-1AonzWnL634Rj09rWxvAhfHjZ1ujZO6Pn.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751228/UniHome/CS03/P201/drive-1Dzu9PXmt5OdIaUPs1d1WLlazkuQOaunp.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751229/UniHome/CS03/P201/drive-1FCgM0OvtBIIn4ADFSNioDBHSmhJ_mJge.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751230/UniHome/CS03/P201/drive-1KCGd2tixB_9nmUj1CemXhEkfbHvA5cmc.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751230/UniHome/CS03/P201/drive-1PS4ik85pkJr3j_dSuvv7DR40f4oksQN-.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751231/UniHome/CS03/P201/drive-1ZA4zdOrbAFjXeOTHtQCNMLUggVbr6p-r.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751232/UniHome/CS03/P201/drive-1y-YC02keE9HhuXhgWdHCS7UFj0OAVr0g.jpg"
+      ],
+      "moTa": "Phòng 201, tầng 2, cơ sở UniHome Cầu Giấy; diện tích 27 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d97"
+      },
+      "maPhong": "CS03-P202",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 202 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "202",
+      "giaThue": {
+        "$numberInt": "3590000"
+      },
+      "dienTich": {
+        "$numberInt": "22"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Giường",
+        "Bàn học"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751233/UniHome/CS03/P202/drive-1ABRNY71V6rctZ_kUkXcjs9ABSQOQ-a-Z.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751233/UniHome/CS03/P202/drive-1GmZ-iAAGW55tHP2MNrmKCJMxDy_ZKTG3.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751234/UniHome/CS03/P202/drive-1JncKdnWkMASzv5tfYAFIPGDu6YWdWGYZ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751235/UniHome/CS03/P202/drive-1ePsOTvBYwB1IyHUHG7NW2vJrT8fMBi8S.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751235/UniHome/CS03/P202/drive-1s_hucYf5CljhwtWSMx4tqTyiwJENsTNM.jpg"
+      ],
+      "moTa": "Phòng 202, tầng 2, cơ sở UniHome Cầu Giấy; diện tích 22 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d98"
+      },
+      "maPhong": "CS03-P301",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 301 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "301",
+      "giaThue": {
+        "$numberInt": "3750000"
+      },
+      "dienTich": {
+        "$numberInt": "25"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Tủ quần áo",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751236/UniHome/CS03/P301/drive-19OtagTo6Rswn5MG2uRFtT6eTOcj3IIuy.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751237/UniHome/CS03/P301/drive-1oGEH67afKKOuxEaVVR4vfHPX9qF9Qla5.jpg"
+      ],
+      "moTa": "Phòng 301, tầng 3, cơ sở UniHome Cầu Giấy; diện tích 25 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d99"
+      },
+      "maPhong": "CS03-P302",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 302 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "302",
+      "giaThue": {
+        "$numberInt": "3500000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Tủ quần áo",
+        "Giường"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751238/UniHome/CS03/P302/drive-1-snQ7QH1Id96I5vGuFfrjhBjZ4w39PYb.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751238/UniHome/CS03/P302/drive-14fTwFBuu3zixpVpi-GXaVq7D3W4yrnpE.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751239/UniHome/CS03/P302/drive-1NWw61oiBdaFxj4KzG3bAX_zJP5ebyakg.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751239/UniHome/CS03/P302/drive-1h1ustcB_LYNG6I_pLSAtiIqSnTjmITtX.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751240/UniHome/CS03/P302/drive-1roiJSdeO6EVftljlaP0fcXDyI_xhG1eh.jpg"
+      ],
+      "moTa": "Phòng 302, tầng 3, cơ sở UniHome Cầu Giấy; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d9a"
+      },
+      "maPhong": "CS03-P401",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 401 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "401",
+      "giaThue": {
+        "$numberInt": "3940000"
+      },
+      "dienTich": {
+        "$numberInt": "27"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Giường",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751241/UniHome/CS03/P401/drive-1-6xAcfeR1ZYLfLo2Wn823vbpvBUPW5D5.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751242/UniHome/CS03/P401/drive-10OV62HnSKMUahAK5i_YN99_awgXAnvKY.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751243/UniHome/CS03/P401/drive-19twN4M19uRcG5GbCRUDxMuIZWveyktcL.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751244/UniHome/CS03/P401/drive-1EFIOjoQOaMaLX1SOTYFVeDY9TQb_kW5b.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751244/UniHome/CS03/P401/drive-1MstUu-tNSNXEu880HM2c8WZ8RieEDij3.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751245/UniHome/CS03/P401/drive-1Y8Tdqxrxe3Vf_ggGwg-ywIXxp2KEmZP0.jpg"
+      ],
+      "moTa": "Phòng 401, tầng 4, cơ sở UniHome Cầu Giấy; diện tích 27 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d9b"
+      },
+      "maPhong": "CS03-P402",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 402 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "402",
+      "giaThue": {
+        "$numberInt": "4040000"
+      },
+      "dienTich": {
+        "$numberInt": "27"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Giường",
+        "Máy giặt chung",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751246/UniHome/CS03/P402/drive-1B9xLCuqfkgP5SIinEw75XoBI86L2QWb0.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751247/UniHome/CS03/P402/drive-1C-7J3rjTz0bXzngTkZTfOkTRSYFkQ5LJ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751247/UniHome/CS03/P402/drive-1PzAZSbmqFIkALnvpBErFj8MCXE5zqayx.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751248/UniHome/CS03/P402/drive-1bUjbjAMvgwm1gHCvXEqlGbbTHYfL17dw.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751249/UniHome/CS03/P402/drive-1ks6pxRWJFB8pnHqnYm3xDMt8vSkEMNrO.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751250/UniHome/CS03/P402/drive-1njZyzXmsdrXhMJF5XUj2bp9lBSiNUkyL.jpg"
+      ],
+      "moTa": "Phòng 402, tầng 4, cơ sở UniHome Cầu Giấy; diện tích 27 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d9c"
+      },
+      "maPhong": "CS03-P501",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 501 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "501",
+      "giaThue": {
+        "$numberInt": "3990000"
+      },
+      "dienTich": {
+        "$numberInt": "27"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Tủ quần áo",
+        "Giường",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751251/UniHome/CS03/P501/drive-1UX50q-9o2U9779zl5Wrc-GxeC7imvHED.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751252/UniHome/CS03/P501/drive-1W703904G6YGHXih905ACEuYlBukqOa3w.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751252/UniHome/CS03/P501/drive-1bNz7YSHMBc3dpAw1pPfyemJCYWv98z7s.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751253/UniHome/CS03/P501/drive-1g5OMXgtdT_z__f-bJArdrZNDDPRVQwY9.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751254/UniHome/CS03/P501/drive-1y2bbWcH2lzMdA7D0Ch3eO5ZBTB_IyuQU.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751255/UniHome/CS03/P501/drive-1zhJynXRkRHXEyXuy5n11nawdYkOeO0VP.jpg"
+      ],
+      "moTa": "Phòng 501, tầng 5, cơ sở UniHome Cầu Giấy; diện tích 27 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d9d"
+      },
+      "maPhong": "CS03-P502",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 502 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "502",
+      "giaThue": {
+        "$numberInt": "3880000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Giường",
+        "Ban công",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751256/UniHome/CS03/P502/drive-1FxmEuXehTUp2Ep9P1BzqTNUH4UnGN_zT.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751257/UniHome/CS03/P502/drive-1_nfZBBK5EFZgpXzgvCVzCpT68kBdRXW-.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751257/UniHome/CS03/P502/drive-1fv7wL8ITB3L4Tc-pomSYbvlqhtZdCJXi.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751258/UniHome/CS03/P502/drive-1jWHrl7XWw4TtEtEA4r21jO-QfWqFpNXk.jpg"
+      ],
+      "moTa": "Phòng 502, tầng 5, cơ sở UniHome Cầu Giấy; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d9e"
+      },
+      "maPhong": "CS03-P601",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 601 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "601",
+      "giaThue": {
+        "$numberInt": "4250000"
+      },
+      "dienTich": {
+        "$numberInt": "30"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Tủ quần áo",
+        "Máy giặt chung",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751259/UniHome/CS03/P601/drive-1AbmP0thL4-CQJDBhPjRftBCu0dka5_4f.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751259/UniHome/CS03/P601/drive-1ayNgCFq21lTMqgN-pOQTaltKjJbx5dkJ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751260/UniHome/CS03/P601/drive-1fZ_PHBS9W3NHqJj_Ui6H2MR5vqs-GJ-3.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751261/UniHome/CS03/P601/drive-1g3Fk1ponDlUx3OkwotULbD6sIASze6Ps.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751261/UniHome/CS03/P601/drive-1vX4l1DnXDF4KQjKXhAQbv8mgst6U6R_7.jpg"
+      ],
+      "moTa": "Phòng 601, tầng 6, cơ sở UniHome Cầu Giấy; diện tích 30 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448d9f"
+      },
+      "maPhong": "CS03-P602",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 602 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "602",
+      "giaThue": {
+        "$numberInt": "4350000"
+      },
+      "dienTich": {
+        "$numberInt": "30"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Tủ quần áo",
+        "Ban công",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751262/UniHome/CS03/P602/drive-1CyQn0B3benDlToFsHlPS5qWHMdycjA8x.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751262/UniHome/CS03/P602/drive-1GiXwk1nDKwZdJHb2q0cY4hSmRPrnphry.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751263/UniHome/CS03/P602/drive-1oKCKb_EuuZXmtBadGLj4pPxRNjPJTLcJ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751264/UniHome/CS03/P602/drive-1tMDPozSuQZIN-ciFJxKMRpN3Glg7yxOm.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751264/UniHome/CS03/P602/drive-1tWYiikvuV5ltGS4D75eWMnecHwLnQTZh.jpg"
+      ],
+      "moTa": "Phòng 602, tầng 6, cơ sở UniHome Cầu Giấy; diện tích 30 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da0"
+      },
+      "maPhong": "CS03-P701",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 701 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "701",
+      "giaThue": {
+        "$numberInt": "4160000"
+      },
+      "dienTich": {
+        "$numberInt": "28"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Máy giặt chung",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751265/UniHome/CS03/P701/drive-155-GZT9izhDaJSvSv1xrGehVxz5hYC0G.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751266/UniHome/CS03/P701/drive-1DaDpVvkpSxoOSy1-egkHK9AlxDoKWW5y.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751267/UniHome/CS03/P701/drive-1M7cHUyYVa3ExU_uXqRdEPB7YtCBeW6OU.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751267/UniHome/CS03/P701/drive-1MKUnUJzM6EgY3VB-yXw-qY5nO03eqG-W.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751268/UniHome/CS03/P701/drive-1Pd2o7lX6I0882rRyHL323Hc731v4VF8b.jpg"
+      ],
+      "moTa": "Phòng 701, tầng 7, cơ sở UniHome Cầu Giấy; diện tích 28 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da1"
+      },
+      "maPhong": "CS03-P702",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 702 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "702",
+      "giaThue": {
+        "$numberInt": "4050000"
+      },
+      "dienTich": {
+        "$numberInt": "25"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Bàn học",
+        "Tủ quần áo",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751269/UniHome/CS03/P702/drive-1Nx4z5HYko2vDABORKQz392sqCF3ejFxj.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751270/UniHome/CS03/P702/drive-1UbQv_zK4oMo3kg_GOGGfjTW16eb0lphx.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751270/UniHome/CS03/P702/drive-1ZgXqfhTDH5LmBwjApFBfSeSLrN3rFA9j.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751271/UniHome/CS03/P702/drive-1dL5fb0h1cXfc2kWm9japNIDz_3bx2FQM.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751272/UniHome/CS03/P702/drive-1sjc7OJjsgNxEGWnNrV0sZ2eBUm74zRuA.jpg"
+      ],
+      "moTa": "Phòng 702, tầng 7, cơ sở UniHome Cầu Giấy; diện tích 25 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da2"
+      },
+      "maPhong": "CS03-P801",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 801 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "8"
+      },
+      "soPhong": "801",
+      "giaThue": {
+        "$numberInt": "4350000"
+      },
+      "dienTich": {
+        "$numberInt": "30"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Tủ quần áo",
+        "Máy giặt chung",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751273/UniHome/CS03/P801/drive-11vbstfyM-OpktdNDNEANRubWtmPyMYQN.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751273/UniHome/CS03/P801/drive-1B6x0R83Ud76MFMHrXUPkYQuYXhUallBN.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751274/UniHome/CS03/P801/drive-1OEMlXq4AsqZMjD-2QOsRmeUin_4-u_3F.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751275/UniHome/CS03/P801/drive-1T2FP0dJqLtx62zPHl3ElGmdV6IC4QljX.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751276/UniHome/CS03/P801/drive-1Typjpv3BlFQJ52QJMXJO5tdjAhKslOlb.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751276/UniHome/CS03/P801/drive-1i6dqBU3i7eXxYdlgpYEVrQPWZC-qKLb9.jpg"
+      ],
+      "moTa": "Phòng 801, tầng 8, cơ sở UniHome Cầu Giấy; diện tích 30 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da3"
+      },
+      "maPhong": "CS03-P802",
+      "maCoSo": "CS03",
+      "tenPhong": "Phòng 802 - UniHome Cầu Giấy",
+      "tang": {
+        "$numberInt": "8"
+      },
+      "soPhong": "802",
+      "giaThue": {
+        "$numberInt": "3750000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Giường",
+        "Máy giặt chung"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751277/UniHome/CS03/P802/drive-1520yKQG9XttImTuBBZiK1T-8h6CdqwDf.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751278/UniHome/CS03/P802/drive-15W1_A6lIxbJaxMls4jutix5tPqKKs5vj.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751279/UniHome/CS03/P802/drive-16sTWUnNZBbHCwAn9Ieik0y6QuRve2t1G.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751279/UniHome/CS03/P802/drive-1NwdGVzKgphhLWcJY3pGqIgncfXmlbinl.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751280/UniHome/CS03/P802/drive-1WqefSkqNc1jUBAOXJKE64T7jbLn8QZhB.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751281/UniHome/CS03/P802/drive-1aDXuQHuhqo6GLWpoKYBEIRL1eIt_dI8J.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751281/UniHome/CS03/P802/drive-1qFQgHbnBUKr6KE0IQMM5LEH4yB6PHvgG.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751282/UniHome/CS03/P802/drive-1sgF6lkBRSRtmQqvVDqG47f_MHTnps533.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751283/UniHome/CS03/P802/drive-1uMwUgnOaSH4XbICOn8Zx_Lflna2zz9JG.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751284/UniHome/CS03/P802/drive-1uhjzFA2jywPJChjbTgV88X4k1N3xYqbh.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751284/UniHome/CS03/P802/drive-1vGrodW0S1aJ0j984FDqr8MHteXNbGuO-.jpg"
+      ],
+      "moTa": "Phòng 802, tầng 8, cơ sở UniHome Cầu Giấy; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da4"
+      },
+      "maPhong": "CS04-P201",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 201 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "201",
+      "giaThue": {
+        "$numberInt": "2310000"
+      },
+      "dienTich": {
+        "$numberInt": "18"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Giường",
+        "Máy giặt chung"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751285/UniHome/CS04/P201/drive-12yV-9EVw8_iJHtac1GGWCyQl7Pshsy3H.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751286/UniHome/CS04/P201/drive-1H5-fRN7lVDr2ER_MdrYzUE1NvTf4DyS4.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751286/UniHome/CS04/P201/drive-1euWEXkjhe9LDGHQfqkdsNyscKSjGIwRS.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751287/UniHome/CS04/P201/drive-1hmTRiZfspVGKoXTma_6vaXp22qLfstlR.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751287/UniHome/CS04/P201/drive-1sJC902Xl0YoSY5im7AoulzF-H6mniyV-.jpg"
+      ],
+      "moTa": "Phòng 201, tầng 2, cơ sở UniHome Hà Đông; diện tích 18 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da5"
+      },
+      "maPhong": "CS04-P202",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 202 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "202",
+      "giaThue": {
+        "$numberInt": "2830000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Ban công",
+        "Giường",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751288/UniHome/CS04/P202/drive-12ugXVxb2WQVLYKsGa3wBCNOLnaBE9TCT.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751289/UniHome/CS04/P202/drive-1aNX-Q26wbwvn8k9dKJ26q6gR8YMruI0E.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751290/UniHome/CS04/P202/drive-1dXvDCcJPY7Ky9zU0EsB5a1onWo_9Xx5h.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751290/UniHome/CS04/P202/drive-1f7PI7uvZLHO2wjyW9eZzYPSU2RklCCh1.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751291/UniHome/CS04/P202/drive-1siN6zBnAGv8LDwCjUFaHxTgiNLUIzP3y.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751292/UniHome/CS04/P202/drive-1yWoxYn1gFb3zmAs3FgYrzqYtSdmHegkl.jpg"
+      ],
+      "moTa": "Phòng 202, tầng 2, cơ sở UniHome Hà Đông; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da6"
+      },
+      "maPhong": "CS04-P301",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 301 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "301",
+      "giaThue": {
+        "$numberInt": "2640000"
+      },
+      "dienTich": {
+        "$numberInt": "22"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Ban công",
+        "Giường"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751292/UniHome/CS04/P301/drive-1MQRITdvehsT_lJr3mjzUXDUzho8RRHQ-.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751293/UniHome/CS04/P301/drive-1VBSrTHJddPAl-xrQHa6Ri1rm5PJuQvzz.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751294/UniHome/CS04/P301/drive-1avy9L2aed4uMIk2dDuLQx1JUKHU5N7pl.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751294/UniHome/CS04/P301/drive-1nYgUgD3RXNwGVmDG3tI5SLn2IneHqvOq.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751295/UniHome/CS04/P301/drive-1xNBdxUyJtah2efZo0ZFJXEqZSMTQuccq.jpg"
+      ],
+      "moTa": "Phòng 301, tầng 3, cơ sở UniHome Hà Đông; diện tích 22 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da7"
+      },
+      "maPhong": "CS04-P302",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 302 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "302",
+      "giaThue": {
+        "$numberInt": "3300000"
+      },
+      "dienTich": {
+        "$numberInt": "30"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Tủ quần áo",
+        "Giường",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751296/UniHome/CS04/P302/drive-12SyhSTDBlHBb2yKhappCy_dxvNY7e4lc.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751296/UniHome/CS04/P302/drive-1EJ5A66j5ZlrT8KYso9F5FuCi9TbCwYfN.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751297/UniHome/CS04/P302/drive-1J9ns_EUt5-_IFtmGzBysG-5TtDKZfonb.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751298/UniHome/CS04/P302/drive-1K6xJ5r4ULsTWc9TtO_z32SY8z5pHvwVz.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751299/UniHome/CS04/P302/drive-1tX3ESndIzMxLwfwaXX0s_v6ow_1j_gnc.jpg"
+      ],
+      "moTa": "Phòng 302, tầng 3, cơ sở UniHome Hà Đông; diện tích 30 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da8"
+      },
+      "maPhong": "CS04-P401",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 401 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "401",
+      "giaThue": {
+        "$numberInt": "2550000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Bàn học",
+        "Tủ quần áo"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751299/UniHome/CS04/P401/drive-1J3UdGVPkIMGHJNLHOIByHrmpXC6lGMam.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751300/UniHome/CS04/P401/drive-1OJeOZRUfs8yIApbghikS77P_VR_NJ3xF.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751301/UniHome/CS04/P401/drive-1_pNTj9XzcrG_If4AaXRZYQkER2MzH573.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751301/UniHome/CS04/P401/drive-1bJ1cPcCU8u4gxG9lAuUtNlHwXFyA8cQ8.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751302/UniHome/CS04/P401/drive-1z_hdHASpd-4pLq-7iqwncnYZeE9HAXTA.jpg"
+      ],
+      "moTa": "Phòng 401, tầng 4, cơ sở UniHome Hà Đông; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448da9"
+      },
+      "maPhong": "CS04-P402",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 402 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "402",
+      "giaThue": {
+        "$numberInt": "3210000"
+      },
+      "dienTich": {
+        "$numberInt": "28"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Giường",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751303/UniHome/CS04/P402/drive-11lnghb55ZakdYatiaXkf5cRybIy8zBIZ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751304/UniHome/CS04/P402/drive-1AY9nU7RcBIwqv58atMOPNAWrRHZoWCcF.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751304/UniHome/CS04/P402/drive-1UniDcNOt4p3cBUQHzEcucV0BsZuc0xS2.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751305/UniHome/CS04/P402/drive-1nl7S-xvsGw3zvkgvsuCCSqRe_X9Jl0Jh.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751306/UniHome/CS04/P402/drive-1z1DjijXmmzaz58uJ-sWsvf9YWqvvVyBa.jpg"
+      ],
+      "moTa": "Phòng 402, tầng 4, cơ sở UniHome Hà Đông; diện tích 28 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448daa"
+      },
+      "maPhong": "CS04-P501",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 501 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "501",
+      "giaThue": {
+        "$numberInt": "2600000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Ban công",
+        "Bàn học"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751306/UniHome/CS04/P501/drive-19JdfE-EagT9O6LQPy7p1qTl0vD0Zb_n3.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751307/UniHome/CS04/P501/drive-1E8peogF7qldr9T6c2b724dc_x35gtxmP.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751308/UniHome/CS04/P501/drive-1jNkm7PT7MaDihpEOh-N7JUohHcnoaZXM.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751309/UniHome/CS04/P501/drive-1sqctf1n0GPwBB73CB7XHiwTYdPnFKOuz.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751309/UniHome/CS04/P501/drive-1ucT5xd8ECrcilAeh5yPH059s6boDGNrw.jpg"
+      ],
+      "moTa": "Phòng 501, tầng 5, cơ sở UniHome Hà Đông; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448dab"
+      },
+      "maPhong": "CS04-P502",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 502 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "502",
+      "giaThue": {
+        "$numberInt": "3190000"
+      },
+      "dienTich": {
+        "$numberInt": "27"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Tủ quần áo",
+        "Máy giặt chung",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751310/UniHome/CS04/P502/drive-19CsO4SmqeduOWMbFEBU2xw-V_qTajsk1.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751311/UniHome/CS04/P502/drive-1DJXglweNYsb6zyHTkM3XkZb2_O2fEIP2.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751311/UniHome/CS04/P502/drive-1Wf_B4XWWX8fGAJO_sz8xesg2ECn8G6GA.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751312/UniHome/CS04/P502/drive-1XHjlz7Kj_vsv_JbpxV33NpK-asPEZwDi.jpg"
+      ],
+      "moTa": "Phòng 502, tầng 5, cơ sở UniHome Hà Đông; diện tích 27 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448dac"
+      },
+      "maPhong": "CS04-P601",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 601 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "601",
+      "giaThue": {
+        "$numberInt": "2930000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Ban công",
+        "Giường",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751313/UniHome/CS04/P601/drive-1No6Va3W4Fa8ikuvGemuNDjja6BQnZWp-.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751314/UniHome/CS04/P601/drive-1VbDr3ZT0S0wu36TkVJl3rTF8JZMLA4zQ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751315/UniHome/CS04/P601/drive-1gjrIMMdoSO_-BBDs7-OQm4pcw2eQYkel.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751316/UniHome/CS04/P601/drive-1iNpQUdqFJoTijtNwkCEn3bAWCQEf-BHD.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751317/UniHome/CS04/P601/drive-1iUGjE8zBM39xeHLc_pPdwEOXv5F8sDMJ.jpg"
+      ],
+      "moTa": "Phòng 601, tầng 6, cơ sở UniHome Hà Đông; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448dad"
+      },
+      "maPhong": "CS04-P602",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 602 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "602",
+      "giaThue": {
+        "$numberInt": "3310000"
+      },
+      "dienTich": {
+        "$numberInt": "28"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Bàn học",
+        "Máy giặt chung",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751317/UniHome/CS04/P602/drive-1CbBL7EQnPZTFeqR7Cc0rMU0DMty_cOpK.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751318/UniHome/CS04/P602/drive-1GQBncpOvVz3VqjI8F4-h3XXaPRepg6OR.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751319/UniHome/CS04/P602/drive-1Ys3qIE9ilKUM8NUhyammQYddGZGZzpFd.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751320/UniHome/CS04/P602/drive-1ef6KU2TZ-iVjdk9NyOxcJB-jOkjJp7AZ.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751321/UniHome/CS04/P602/drive-1vQKy52H_p-FY-ZTgm3z5zMLvkWHSeRKb.jpg"
+      ],
+      "moTa": "Phòng 602, tầng 6, cơ sở UniHome Hà Đông; diện tích 28 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448dae"
+      },
+      "maPhong": "CS04-P701",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 701 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "701",
+      "giaThue": {
+        "$numberInt": "2980000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Ban công",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751321/UniHome/CS04/P701/drive-15MWy3wf7mVHEM1MP5AxBvKWHLLuGylHl.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751322/UniHome/CS04/P701/drive-1RyUWtG7wUlw4E4TgwQiLg_NzRUFFAgPo.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751322/UniHome/CS04/P701/drive-1WbpBKsXruROZnCNkD7LDzD-_BK30Ov8Q.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751323/UniHome/CS04/P701/drive-1fTayshcgXpeYVThfSMu-vKWROrZLdf5e.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751324/UniHome/CS04/P701/drive-1tIoLCNBOx1I61kr3tSmv_1uyVQ1o1o9R.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751324/UniHome/CS04/P701/drive-1xbwZ3K5R3bExpdtZcWKtbaiArJR0tfsT.jpg"
+      ],
+      "moTa": "Phòng 701, tầng 7, cơ sở UniHome Hà Đông; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448daf"
+      },
+      "maPhong": "CS04-P702",
+      "maCoSo": "CS04",
+      "tenPhong": "Phòng 702 - UniHome Hà Đông",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "702",
+      "giaThue": {
+        "$numberInt": "2800000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Máy giặt chung",
+        "Ban công"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751325/UniHome/CS04/P702/drive-1C40REx7O4iZaAAuQ9W2glqcBoOdF9cXe.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751326/UniHome/CS04/P702/drive-1DKb8k3j85hGlIXtKErFurPtV-Xx7OgFP.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751327/UniHome/CS04/P702/drive-1Ts-5r6upLa21LwXfDA9wZO8GFngpGuvE.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751328/UniHome/CS04/P702/drive-1WJJSJHyfgJItS2GmCvzKF-CfGuIHYsr2.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751328/UniHome/CS04/P702/drive-1fFd3OmtXD-pQkvEhWirZ9kWzDGXZVSSg.jpg"
+      ],
+      "moTa": "Phòng 702, tầng 7, cơ sở UniHome Hà Đông; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db0"
+      },
+      "maPhong": "CS05-P201",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 201 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "201",
+      "giaThue": {
+        "$numberInt": "3190000"
+      },
+      "dienTich": {
+        "$numberInt": "22"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Giường",
+        "Tủ quần áo"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751329/UniHome/CS05/P201/drive-1E7iUPPeQej9zq1OjzEob8L9OhcSmYW8G.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751330/UniHome/CS05/P201/drive-1PXigf8hnY8OKIWAX5HdUd6OoPxSZy51A.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751331/UniHome/CS05/P201/drive-1T307jxLxlRda3D9rNW9a3pvhDFgl2M4y.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751332/UniHome/CS05/P201/drive-1_adv5rLY3TcrFlO0V_QOuUIf58iiqxWd.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751333/UniHome/CS05/P201/drive-1q8X0lZLRmQnD4hopRux5PBBXuEWhxwsn.jpg"
+      ],
+      "moTa": "Phòng 201, tầng 2, cơ sở UniHome Đống Đa; diện tích 22 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db1"
+      },
+      "maPhong": "CS05-P202",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 202 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "2"
+      },
+      "soPhong": "202",
+      "giaThue": {
+        "$numberInt": "3500000"
+      },
+      "dienTich": {
+        "$numberInt": "25"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Bàn học",
+        "Tủ quần áo",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751333/UniHome/CS05/P202/drive-1Hgo0BlEa9I0_zOKv42kV53aOiKKv3TyS.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751334/UniHome/CS05/P202/drive-1WX3k24boRvI2g67AnNdn3OUr6yy5RyfV.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751335/UniHome/CS05/P202/drive-1dYJOYr0pY-xpgUkjWgyVk8Y8rC4EBShb.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751335/UniHome/CS05/P202/drive-1eibUhZvAYNgYHRiGnTDGhc_xcMaZr9Ib.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751336/UniHome/CS05/P202/drive-1gzb0KfNX1jBTKRSNIaP8pV88vIYuLGO8.jpg"
+      ],
+      "moTa": "Phòng 202, tầng 2, cơ sở UniHome Đống Đa; diện tích 25 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db2"
+      },
+      "maPhong": "CS05-P301",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 301 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "301",
+      "giaThue": {
+        "$numberInt": "3800000"
+      },
+      "dienTich": {
+        "$numberInt": "30"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Máy giặt chung",
+        "Ban công",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751337/UniHome/CS05/P301/drive-18IRhHpBGNxAjrelGlbmG3MubaqqmFn80.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751338/UniHome/CS05/P301/drive-1FRVkaroV25d-FQQLBOqJd0_8yKe5TTdt.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751338/UniHome/CS05/P301/drive-1K_3g1iPLUIbZS-B__Wl_Rg9AsnkjjY5b.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751340/UniHome/CS05/P301/drive-1s51oBAXKrnW5kiRHAPAj-CYYAoo9qmbS.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751340/UniHome/CS05/P301/drive-1tNvQIWz2lT67C_-AEzK-im7qebbTEmaC.jpg"
+      ],
+      "moTa": "Phòng 301, tầng 3, cơ sở UniHome Đống Đa; diện tích 30 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db3"
+      },
+      "maPhong": "CS05-P302",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 302 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "3"
+      },
+      "soPhong": "302",
+      "giaThue": {
+        "$numberInt": "3480000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Máy giặt chung",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751341/UniHome/CS05/P302/drive-13BaQslAkTfB2BFvqd6oN49z05OAMrRzq.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751341/UniHome/CS05/P302/drive-14sntu-SUdU5NctPK2O1XZnNuk39HRtsl.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751342/UniHome/CS05/P302/drive-15VbNC_HFPU2PZ5pdA-Hy0_qe5lv3yaQg.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751343/UniHome/CS05/P302/drive-1JL3KoH1cY9DbI7OXbg2hB8MLCA_0m3xo.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751344/UniHome/CS05/P302/drive-1VXXmlKR0Od3ew-6yoVTQtl-xdTM09yYR.jpg"
+      ],
+      "moTa": "Phòng 302, tầng 3, cơ sở UniHome Đống Đa; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db4"
+      },
+      "maPhong": "CS05-P401",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 401 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "401",
+      "giaThue": {
+        "$numberInt": "3640000"
+      },
+      "dienTich": {
+        "$numberInt": "27"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Máy giặt chung",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751344/UniHome/CS05/P401/drive-1-8DGY5BMoMCQo2x5jJk2gBRB4l9l1zSz.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751345/UniHome/CS05/P401/drive-18f8MtmKIkHY5kr1m_lcgsS2M1iMkU5II.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751346/UniHome/CS05/P401/drive-1JSSFF1_Se9HsrWz6SQUBkq_ST6Y7dqkr.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751347/UniHome/CS05/P401/drive-1OmnNgQtzFISs42QghcSsuSPrlv9W-0WB.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751348/UniHome/CS05/P401/drive-1i-gVffe_lFWyiGyIJXvs-9glIudExeP9.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751349/UniHome/CS05/P401/drive-1qqcSl-lb4ClFsnTEQazbqThCU-aLCQxP.jpg"
+      ],
+      "moTa": "Phòng 401, tầng 4, cơ sở UniHome Đống Đa; diện tích 27 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db5"
+      },
+      "maPhong": "CS05-P402",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 402 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "4"
+      },
+      "soPhong": "402",
+      "giaThue": {
+        "$numberInt": "3950000"
+      },
+      "dienTich": {
+        "$numberInt": "30"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Tủ quần áo",
+        "Giường",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751349/UniHome/CS05/P402/drive-14rN3E0ulJ8pQbzr0Zs06OKuhgQ8VnLAm.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751350/UniHome/CS05/P402/drive-1EADEhYZO6vOLfwWm5V-JjLBLh1Nnpomu.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751351/UniHome/CS05/P402/drive-1OqN9nmMqeftsamML70PUTdkUOgU5PBg9.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751351/UniHome/CS05/P402/drive-1Qm5XEL4RX6EbR4RVjnUSVqHjFmr6dOJT.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751352/UniHome/CS05/P402/drive-1fISxXamHMLlRmCXaVBraj22d5ciMZkae.jpg"
+      ],
+      "moTa": "Phòng 402, tầng 4, cơ sở UniHome Đống Đa; diện tích 30 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db6"
+      },
+      "maPhong": "CS05-P501",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 501 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "501",
+      "giaThue": {
+        "$numberInt": "3200000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Giường",
+        "Bàn học"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751353/UniHome/CS05/P501/drive-1LfyQkOy33gI5P5e-EN6VlXS2nntf-W-k.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751354/UniHome/CS05/P501/drive-1OQizIWDxlZ2bRyDjc_6UCiFqbbdyytwD.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751354/UniHome/CS05/P501/drive-1VCsH6a-6-xDjTqz6bvSEE1ikAOJ-EWk1.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751355/UniHome/CS05/P501/drive-1ZcEoFzbZe4eCsRa6LBz_Rdy_trmFmFXr.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751356/UniHome/CS05/P501/drive-1zj-fW3x20P4oCue_DhYLG042Zo_8sGTh.jpg"
+      ],
+      "moTa": "Phòng 501, tầng 5, cơ sở UniHome Đống Đa; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db7"
+      },
+      "maPhong": "CS05-P502",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 502 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "5"
+      },
+      "soPhong": "502",
+      "giaThue": {
+        "$numberInt": "3300000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Ban công",
+        "Giường"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751356/UniHome/CS05/P502/drive-1-oBDmMGqRO_TbLDQVkwk1nw3remp4WUB.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751357/UniHome/CS05/P502/drive-1DcJjzAKTaXPNnPhhtf9NWA2-dVv8nVFu.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751358/UniHome/CS05/P502/drive-1FZ8UE0A08nPWginFmeJxeN0_VgNmEdEw.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751358/UniHome/CS05/P502/drive-1GRsAagUCjtN7XRcG6vPenMV4gPzeZ0kP.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751359/UniHome/CS05/P502/drive-1HNHDFp6gmjadgLeIZnkCGsxgngJdrzkT.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751360/UniHome/CS05/P502/drive-1J5iwdQS-RED17AT9ZEItUqqglXtoGPCV.jpg"
+      ],
+      "moTa": "Phòng 502, tầng 5, cơ sở UniHome Đống Đa; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db8"
+      },
+      "maPhong": "CS05-P601",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 601 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "601",
+      "giaThue": {
+        "$numberInt": "3530000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "sap_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Máy giặt chung",
+        "Giường",
+        "Bàn học",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751361/UniHome/CS05/P601/drive-17kVBG2GG5roFItuzlht01e8KrPxNIgP3.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751362/UniHome/CS05/P601/drive-1Xk0ch06S9sF9b_l461Pr7LCLJbdCWOP2.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751362/UniHome/CS05/P601/drive-1cvPpYm54wmYDwGopKmroB7TqZ462mLen.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751363/UniHome/CS05/P601/drive-1wORX5VXMyQjpfjiHG1b_43Nlhhb8p6BM.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751364/UniHome/CS05/P601/drive-1yBJ1rwxIGCfyAdOH7jxhplU8hcaI3B-S.jpg"
+      ],
+      "moTa": "Phòng 601, tầng 6, cơ sở UniHome Đống Đa; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448db9"
+      },
+      "maPhong": "CS05-P602",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 602 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "6"
+      },
+      "soPhong": "602",
+      "giaThue": {
+        "$numberInt": "3350000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Ban công",
+        "Bàn học",
+        "Tủ quần áo"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751364/UniHome/CS05/P602/drive-1-oO4acdB2Ly6qP4Mo6pkjPcv-8eXJZWR.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751365/UniHome/CS05/P602/drive-10B7jTh7wUqfJKqi1OiSck_iri4ccPXNe.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751366/UniHome/CS05/P602/drive-1AdzgD69oY_RABOiyM8g2Yl7GjBdInFUf.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751366/UniHome/CS05/P602/drive-1I99UkK47V16aCl75dfxIAUn5WCT5XIU3.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751367/UniHome/CS05/P602/drive-1WV89q45OyEzFAKKrp5tpkTRVQS99Gjgo.jpg"
+      ],
+      "moTa": "Phòng 602, tầng 6, cơ sở UniHome Đống Đa; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448dba"
+      },
+      "maPhong": "CS05-P701",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 701 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "701",
+      "giaThue": {
+        "$numberInt": "3580000"
+      },
+      "dienTich": {
+        "$numberInt": "24"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Bàn học",
+        "Tủ quần áo",
+        "Ban công",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751368/UniHome/CS05/P701/drive-10CrBEsfnXsQebXrxwAYwSIN4B3PTuOKo.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751368/UniHome/CS05/P701/drive-12yBL9aH8WqDT2dAY_JsER3w0RZ7h4eNS.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751369/UniHome/CS05/P701/drive-1_a4vGP_gwRdZRPQsk0G_zpau41mIwjse.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751370/UniHome/CS05/P701/drive-1cek8K47DFmG19U9oNKiwzw7ybVsyu8wH.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751371/UniHome/CS05/P701/drive-1sfd-CXbD46GgrEnys5BAxYIaqWqyg9GA.jpg"
+      ],
+      "moTa": "Phòng 701, tầng 7, cơ sở UniHome Đống Đa; diện tích 24 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448dbb"
+      },
+      "maPhong": "CS05-P702",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 702 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "7"
+      },
+      "soPhong": "702",
+      "giaThue": {
+        "$numberInt": "3960000"
+      },
+      "dienTich": {
+        "$numberInt": "28"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "da_thue",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Tủ quần áo",
+        "Bàn học",
+        "Máy giặt chung",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751371/UniHome/CS05/P702/drive-14cobc6s_ZAoNKs2lH8h9gBOBe47wH82S.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751373/UniHome/CS05/P702/drive-1KrQZJI9hySTcZLgUwqiXgAB9QfDYK1c1.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751374/UniHome/CS05/P702/drive-1YMZPT0RTydhK7zSx5VDbItngiuNj89Qw.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751374/UniHome/CS05/P702/drive-1i4S1zU0lRXXEjWdHoOUpnCxiIijUB-2L.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751375/UniHome/CS05/P702/drive-1zCqqUE_fzEIw00oGro2Vgxmn8SKXrkHi.jpg"
+      ],
+      "moTa": "Phòng 702, tầng 7, cơ sở UniHome Đống Đa; diện tích 28 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448dbc"
+      },
+      "maPhong": "CS05-P801",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 801 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "8"
+      },
+      "soPhong": "801",
+      "giaThue": {
+        "$numberInt": "3840000"
+      },
+      "dienTich": {
+        "$numberInt": "27"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "3"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Máy giặt chung",
+        "Tủ quần áo",
+        "Điều hòa",
+        "Bình nóng lạnh"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751376/UniHome/CS05/P801/drive-121pEzbulWwIxK3vjR0h8a9K1uqXNYMH6.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751376/UniHome/CS05/P801/drive-1CtK9OqRM6rVYLtmRFPkwtn4mTiLuGt8k.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751377/UniHome/CS05/P801/drive-1LtRdNb7KzgKf29q6UPG45oBLF-6oaDxV.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751378/UniHome/CS05/P801/drive-1ZiUpvS52pdVa90vyxdpbrHKmlMTXecxo.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751378/UniHome/CS05/P801/drive-1_pjGcuYWdFxG_dD6IRfgdZ0XHBNzFV8c.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751379/UniHome/CS05/P801/drive-1iDs5kIv42gIvq0onhX1hash6d-fEG1BS.jpg"
+      ],
+      "moTa": "Phòng 801, tầng 8, cơ sở UniHome Đống Đa; diện tích 27 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    },
+    {
+      "_id": {
+        "$oid": "6acbd1632855a73c62448dbd"
+      },
+      "maPhong": "CS05-P802",
+      "maCoSo": "CS05",
+      "tenPhong": "Phòng 802 - UniHome Đống Đa",
+      "tang": {
+        "$numberInt": "8"
+      },
+      "soPhong": "802",
+      "giaThue": {
+        "$numberInt": "3450000"
+      },
+      "dienTich": {
+        "$numberInt": "20"
+      },
+      "soNguoiToiDa": {
+        "$numberInt": "2"
+      },
+      "trangThai": "con_trong",
+      "tienIch": [
+        "Wifi",
+        "Nhà vệ sinh riêng",
+        "Giường",
+        "Tủ quần áo",
+        "Bàn học"
+      ],
+      "hinhAnh": [
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751380/UniHome/CS05/P802/drive-1JvQektLUsAVQkobfPBnf7JUQtt0y90xf.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751380/UniHome/CS05/P802/drive-1Qsfa0K3bnT-Wmz5qQC5eYe8-Oaf2qmtK.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751381/UniHome/CS05/P802/drive-1WIXQytpO3lLqUIUhwVWLH9aduN3pD-m2.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751382/UniHome/CS05/P802/drive-1fngafJaexSix8gdvrTGNP--MuckcFVmd.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751382/UniHome/CS05/P802/drive-1mlT_WDMk-CnK_T9TSp_HmcbF1n4EMrb7.jpg",
+        "https://res.cloudinary.com/ou80rgom/image/upload/v1791751383/UniHome/CS05/P802/drive-1yp63K_UaGBHUSl-hwmNlbNxTNs_R2J5F.jpg"
+      ],
+      "moTa": "Phòng 802, tầng 8, cơ sở UniHome Đống Đa; diện tích 20 m², phù hợp sinh viên và người đi làm.",
+      "createdAt": null,
+      "updatedAt": null
+    }
+  ]
+}
