@@ -5,6 +5,7 @@ const User = require("./models/User");
 const Building = require("./models/Building");
 const Room = require("./models/Room");
 const Amenity = require("./models/Amenity");
+const ContactRequest = require("./models/ContactRequest");
 const { createApp } = require("./app");
 
 async function start() {
@@ -14,7 +15,7 @@ async function start() {
   await mongoose.connection.db.admin().ping();
   console.log(`Đã kết nối MongoDB: ${mongoose.connection.name}`);
   // Ensure unique indexes exist before accepting writes to any resource.
-  await Promise.all([User.init(), Building.init(), Room.init(), Amenity.init()]);
+  await Promise.all([User.init(), Building.init(), Room.init(), Amenity.init(), ContactRequest.init()]);
   const server = app.listen(process.env.PORT || 3000, () => console.log(`UniHome API đang chạy tại http://localhost:${process.env.PORT || 3000}`));
   server.on("error", async (error) => {
     console.error("Không thể mở máy chủ:", error.message);

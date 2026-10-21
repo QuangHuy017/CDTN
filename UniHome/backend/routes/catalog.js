@@ -120,7 +120,8 @@ module.exports = function catalog({ authenticate, authorize, models = { Building
       res.json({ data, pagination: { page: p.page, limit: p.limit, total, totalPages: Math.ceil(total / p.limit) } });
     });
     router.param(`${resource}Id`, (req, res, next, id) => {
-      if (!/^[a-f\d]{24}$/i.test(id)) return res.status(400).json({ message: "ID không hợp lệ." });
+      if (!/^[1-9]\d*$/.test(id) || !Number.isSafeInteger(Number(id))) return res.status(400).json({ message: "ID không hợp lệ." });
+      req.params[`${resource}Id`] = Number(id);
       next();
     });
     const path = `/${resource}/:${resource}Id`;

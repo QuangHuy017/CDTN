@@ -5,7 +5,7 @@ const { createApp } = require("../app");
 
 test("catalog CRUD, permissions, validation and combined filters", async (t) => {
   const secret = "catalog-test-secret-at-least-thirty-two-bytes";
-  const id = "0123456789abcdef01234567";
+  const id = 1;
   let lastFilter;
   let buildingExists = true;
   let roomInUse = false;
@@ -33,7 +33,7 @@ test("catalog CRUD, permissions, validation and combined filters", async (t) => 
   const server = createApp({ secret, users, catalogModels: { Room: model, Building: buildings, Amenity: model } }).listen(0, "127.0.0.1");
   await new Promise((resolve) => server.once("listening", resolve));
   t.after(() => new Promise((resolve) => server.close(resolve)));
-  const token = jwt.sign({}, secret, { subject: id, issuer: "unihome", audience: "unihome-api" });
+  const token = jwt.sign({}, secret, { subject: String(id), issuer: "unihome", audience: "unihome-api" });
   async function request(path, method = "GET", body, authenticated = true) {
     const response = await fetch(`http://127.0.0.1:${server.address().port}/api${path}`, {
       method, headers: { "Content-Type": "application/json", ...(authenticated ? { Authorization: `Bearer ${token}` } : {}) },
@@ -70,7 +70,10 @@ test("catalog CRUD, permissions, validation and combined filters", async (t) => 
   assert.equal((await request(`/rooms/${id}`, "PUT", { giaThue: 1 })).status, 400);
   assert.equal((await request(`/rooms/${id}`, "PATCH", { giaThue: 4000000 })).body.data.giaThue, 4000000);
   assert.equal((await request("/rooms/invalid")).status, 400);
-  assert.equal((await request("/rooms/aaaaaaaaaaaaaaaaaaaaaaaa")).status, 404);
+  for (const invalid of ["aaaaaaaaaaaaaaaaaaaaaaaa", "0", "-1", "1.5", "9007199254740992"]) {
+    assert.equal((await request(`/rooms/${invalid}`)).status, 400);
+  }
+  assert.equal((await request("/rooms/999999")).status, 404);
   assert.equal((await request(`/rooms/${id}`, "DELETE")).status, 204);
   assert.equal((await request(`/rooms/${id}`)).status, 404);
   const building = { maCoSo: "TN01", tenCoSo: "UniHome", diaChi: "Hà Nội", khuVuc: "Thanh Xuân", soTang: 5, toaDo: { coordinates: [105.8, 21] }, soPhongMoiTang: 2, tongSoPhong: 8, giaDien: 3500, giaNuoc: 100000, donViNuoc: "nguoi/thang", tienCocThang: 1, noiQuy: ["Giữ vệ sinh chung"] };

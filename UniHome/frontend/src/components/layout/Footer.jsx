@@ -12,7 +12,7 @@ const information = [
   },
   {
     title: "Chính sách bảo mật",
-    paragraphs: ["Khi đăng ký, hệ thống nhận họ tên, email, số điện thoại và mật khẩu để tạo tài khoản. Mật khẩu được bảo vệ bằng cơ chế băm khi lưu trữ.", "Danh sách phòng yêu thích được lưu trong trình duyệt trên thiết bị của bạn. Nếu chọn Ghi nhớ tài khoản, email hoặc số điện thoại cũng được lưu trên trình duyệt. Website sử dụng cookie để duy trì phiên đăng nhập đến khi hết hạn hoặc bạn đăng xuất.", "Tính năng nhập giọng nói sử dụng chức năng nhận diện giọng nói của trình duyệt khi bạn chủ động bật micro."],
+    paragraphs: ["Khi đăng ký, hệ thống nhận họ tên, email, số điện thoại và mật khẩu để tạo tài khoản. Mật khẩu được lưu trực tiếp trong cơ sở dữ liệu dưới dạng văn bản.", "Danh sách phòng yêu thích được lưu trong trình duyệt trên thiết bị của bạn. Nếu chọn Ghi nhớ tài khoản, email hoặc số điện thoại cũng được lưu trên trình duyệt. Website sử dụng cookie để duy trì phiên đăng nhập đến khi hết hạn hoặc bạn đăng xuất.", "Tính năng nhập giọng nói sử dụng chức năng nhận diện giọng nói của trình duyệt khi bạn chủ động bật micro."],
   },
   {
     title: "Liên hệ hỗ trợ",

@@ -21,7 +21,7 @@ export async function getRooms(filters, signal) {
 }
 
 export function parseRoomPrompt(prompt, regions) {
-  const normalize = (text) => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d").toLowerCase();
+  const normalize = (text) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/g, "d");
   const text = normalize(prompt);
   const filters = { khuVuc: "", price: "", area: "" };
   filters.khuVuc = regions.find((region) => text.includes(normalize(region))) || "";
@@ -51,7 +51,7 @@ async function readCatalog(path, signal) {
 }
 
 export async function getFeaturedRooms({ page = 1, all = false } = {}, signal) {
-  const query = new URLSearchParams({ page: String(page), limit: "6", sort: "-createdAt" });
+  const query = new URLSearchParams({ page: String(page), limit: "12", sort: "-createdAt" });
   if (!all) query.set("trangThai", "con_trong");
   const [rooms, buildings] = await Promise.all([
     readCatalog(`/api/rooms?${query}`, signal),
@@ -62,7 +62,7 @@ export async function getFeaturedRooms({ page = 1, all = false } = {}, signal) {
 }
 
 export async function getRoomDetails(id, signal) {
-  if (!/^[a-f\d]{24}$/i.test(id || "")) throw Object.assign(new Error("Không tìm thấy phòng."), { status: 404 });
+  if ((!/^[1-9]\d*$/.test(String(id || "")) || !Number.isSafeInteger(Number(id)))) throw Object.assign(new Error("Không tìm thấy phòng."), { status: 404 });
   let response;
   try { response = await fetch(`/api/rooms/${encodeURIComponent(id)}`, { signal }); }
   catch (error) {

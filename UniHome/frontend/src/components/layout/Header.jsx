@@ -1,17 +1,38 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Brand from "./Brand";
 import Icon from "../common/Icon";
 import { Link, useLocation } from "react-router-dom";
 const navigation = [
   { key: "home", label: "Trang chủ", href: "/" },
-  { key: "rooms", label: "Tìm phòng", href: "/?page=rooms" },
-  { key: "map", label: "Bản đồ phòng", href: "/?page=map", icon: "map" },
+  { key: "rooms", label: "Bản đồ phòng", href: "/?page=rooms" },
+  { key: "favorites", label: "Phòng yêu thích", href: "/?page=favorites", icon: "heart" },
   { key: "about", label: "Giới thiệu", href: "/?page=about" },
   { key: "contact", label: "Liên hệ", href: "/?page=contact" },
 ];
 
 export default function Header({ user, onLogin, onLogout, onRegister }) {
   const searchInput = useRef(null);
+  const accountMenu = useRef(null);
+  const accountButton = useRef(null);
+  const [accountOpen, setAccountOpen] = useState(false);
+  useEffect(() => {
+    if (!accountOpen) return;
+    function outside(event) {
+      if (!accountMenu.current?.contains(event.target)) setAccountOpen(false);
+    }
+    function escape(event) {
+      if (event.key === "Escape") {
+        setAccountOpen(false);
+        accountButton.current?.focus();
+      }
+    }
+    document.addEventListener("pointerdown", outside);
+    document.addEventListener("keydown", escape);
+    return () => {
+      document.removeEventListener("pointerdown", outside);
+      document.removeEventListener("keydown", escape);
+    };
+  }, [accountOpen]);
   useEffect(() => {
     function focusSearch(event) {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k" && !document.querySelector("dialog[open]")) {
@@ -43,11 +64,20 @@ export default function Header({ user, onLogin, onLogout, onRegister }) {
           <input className="w-full min-w-0 border-0 bg-transparent text-xs text-slate-700 outline-none placeholder:text-slate-500" ref={searchInput} name="q" aria-label="Tìm theo trường đại học hoặc khu vực" placeholder="Tìm theo trường ĐH, khu vực..." defaultValue={params.get("q") || ""} />
           <kbd className="shrink-0 rounded border border-slate-200 bg-white px-1 py-0.5 font-sans text-[10px] text-slate-500" aria-hidden="true">⌘K</kbd>
         </form>
-        <Link className="ml-auto grid size-[30px] shrink-0 place-items-center rounded-full border border-[#e2e9f4] text-[#405474] hover:bg-blue-50 hover:text-blue-600 min-[601px]:ml-0 min-[601px]:size-[34px]" to="/?page=favorites" aria-label="Phòng đã lưu" title="Phòng đã lưu"><Icon name="heart" className="size-[18px]!" /></Link>
         <span className="hidden h-6 w-px bg-[#e8edf6] min-[601px]:block" aria-hidden="true" />
-        <button className="flex min-h-[34px] max-w-[120px] items-center justify-center border-0 bg-transparent px-0 py-1 text-[11px] leading-snug font-semibold text-[#243858] hover:text-blue-600 min-[601px]:min-h-11 min-[601px]:max-w-[110px] min-[601px]:px-2.5 min-[601px]:text-sm" type="button" onClick={user ? onLogout : onLogin} title={user ? "Đăng xuất" : undefined} aria-label={user ? `${user.name} — Đăng xuất` : "Đăng nhập"}>
+        <div ref={accountMenu} className="relative ml-auto min-[601px]:ml-0" onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setAccountOpen(false); }}>
+        <button ref={accountButton} className="flex min-h-[34px] max-w-[140px] items-center justify-center gap-1.5 border-0 bg-transparent px-0 py-1 text-[11px] leading-snug font-semibold text-[#243858] hover:text-blue-600 min-[601px]:min-h-11 min-[601px]:px-2.5 min-[601px]:text-sm" type="button" onClick={user ? () => setAccountOpen(!accountOpen) : onLogin} aria-expanded={user ? accountOpen : undefined} aria-controls={user ? "account-options" : undefined} aria-label={user ? `Tài khoản ${user.name}` : "Đăng nhập"}>
           <span className="overflow-hidden text-ellipsis whitespace-nowrap">{user ? user.name : "Đăng nhập"}</span>
+          {user && <span aria-hidden="true" className={`text-xs transition-transform ${accountOpen ? "rotate-180" : ""}`}>⌄</span>}
         </button>
+        {user && accountOpen && <nav id="account-options" aria-label="Menu tài khoản" className="absolute right-0 top-full z-50 mt-2 w-60 rounded-xl border border-slate-200 bg-white p-2 text-sm shadow-lg">
+          {user.role === "admin" && <Link to="/admin" onClick={() => setAccountOpen(false)} className="block rounded-lg px-3 py-3 font-medium text-sky-700 hover:bg-blue-50">Trang quản trị</Link>}
+          <Link to="/account" onClick={() => setAccountOpen(false)} className="block rounded-lg px-3 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-600">Thông tin tài khoản</Link>
+          <Link to="/appointments" onClick={() => setAccountOpen(false)} className="block rounded-lg px-3 py-3 text-slate-700 hover:bg-blue-50 hover:text-blue-600">Yêu cầu liên hệ đã gửi</Link>
+          <div className="my-1 border-t border-slate-100" />
+          <button type="button" onClick={() => { setAccountOpen(false); onLogout(); }} className="w-full rounded-lg px-3 py-3 text-left text-red-600 hover:bg-red-50">Đăng xuất</button>
+        </nav>}
+        </div>
         {!user && <button className="shrink-0 whitespace-nowrap min-h-9 rounded-[9px] border border-[#2563f4] bg-[#2563f4] px-2 py-1.5 text-[11px] leading-snug font-semibold text-white hover:bg-blue-700 min-[601px]:min-h-[46px] min-[601px]:rounded-xl min-[601px]:px-[18px] min-[601px]:py-2 min-[601px]:text-[13px]" type="button" onClick={onRegister}>Đăng ký</button>}
       </div>
       </div>

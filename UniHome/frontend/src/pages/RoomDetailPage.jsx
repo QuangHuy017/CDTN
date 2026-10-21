@@ -1,3 +1,4 @@
+import { readSavedRooms as readFavorites } from "../services/savedRooms";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getRoomDetails } from "../services/roomService";
@@ -6,11 +7,6 @@ import { roomStatuses } from "../components/rooms/RoomCard";
 import RoomGallery from "../components/rooms/RoomGallery";
 import RoomCosts from "../components/rooms/RoomCosts";
 import RoomVisitCard from "../components/rooms/RoomVisitCard";
-
-function readFavorites() {
-  try { const value = JSON.parse(localStorage.getItem("unihome:saved-rooms") || "[]"); return Array.isArray(value) ? value.filter((id) => typeof id === "string") : []; }
-  catch { return []; }
-}
 
 function DetailContent({ room }) {
   const [favorites, setFavorites] = useState(readFavorites);
@@ -73,6 +69,12 @@ export default function RoomDetailPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
   const [retry, setRetry] = useState(0);
+  useEffect(() => {
+    if (!loading && room && window.location.hash === "#visit-room") {
+      const frame = requestAnimationFrame(() => document.getElementById("visit-room")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+      return () => cancelAnimationFrame(frame);
+    }
+  }, [loading, room]);
   useEffect(() => {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(new DOMException("Timeout", "TimeoutError")), 15000);

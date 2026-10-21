@@ -20,4 +20,5 @@ const schema = new mongoose.Schema({
   noiQuy: [String]
 }, { timestamps: true, collection: "CoSo" });
 schema.index({ toaDo: "2dsphere" });
+schema.plugin(require("./numericId"));
 module.exports = mongoose.model("Building", schema);

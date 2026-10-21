@@ -32,3 +32,13 @@ export async function logout() {
   const response = await fetch("/api/auth/logout", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: "{}", signal: AbortSignal.timeout(10000) });
   if (!response.ok) throw new Error("Chưa thể đăng xuất. Vui lòng thử lại.");
 }
+
+export async function updateProfile(profile) {
+  let response;
+  try {
+    response = await fetch("/api/auth/me", { method: "PATCH", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify(profile), signal: AbortSignal.timeout(15000) });
+  } catch { throw new Error("Không thể kết nối máy chủ. Vui lòng thử lại."); }
+  const data = await response.json().catch(() => null);
+  if (!response.ok || !data?.user) throw new Error(data?.message || "Chưa lưu được thông tin tài khoản.");
+  return data;
+}

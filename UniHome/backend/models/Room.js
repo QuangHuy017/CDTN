@@ -19,4 +19,5 @@ const schema = new mongoose.Schema({
 }, { timestamps: true, collection: "Phong" });
 schema.index({ maCoSo: 1, giaThue: 1 });
 schema.index({ loaiPhong: 1, dienTich: 1 });
+schema.plugin(require("./numericId"));
 module.exports = mongoose.model("Room", schema);

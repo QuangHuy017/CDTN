@@ -18,6 +18,8 @@
 
 # Private database exports and logs
 users.ejson
+UniHome/backend/backups/
+UniHome/backend/id-mapping.json
 *.log
 
 # Editor and OS state

@@ -1,7 +1,6 @@
 const { test } = require("node:test");
 const assert = require("node:assert/strict");
 const jwt = require("jsonwebtoken");
-const bcrypt = require("bcryptjs");
 const { createApp } = require("../app");
 
 const secret = "test-secret-with-at-least-thirty-two-bytes";
@@ -23,7 +22,7 @@ test("registration, login and protected profile", async (t) => {
     },
     async create(data) {
       if (duplicateRace) throw Object.assign(new Error("duplicate"), { code: 11000 });
-      const user = { ...data, _id: "0123456789abcdef01234567" };
+      const user = { ...data, _id: 1 };
       records.set(data.email, user);
       return user;
     },
@@ -48,8 +47,8 @@ test("registration, login and protected profile", async (t) => {
   assert.equal(registered.body.user.matKhau, undefined);
   assert.equal(records.get("an@example.com").vaiTro, "user");
   assert.equal(registered.body.user.role, "tenant");
-  assert.notEqual(records.get("an@example.com").matKhau, input.password);
-  assert.ok(await bcrypt.compare(input.password, records.get("an@example.com").matKhau));
+  assert.equal(records.get("an@example.com").matKhau, input.password);
+  assert.equal(records.get("an@example.com").dinhDangMatKhau, "plain");
   const claims = jwt.verify(registered.body.token, secret, { algorithms: ["HS256"], issuer: "unihome", audience: "unihome-api" });
   assert.equal(claims.exp - claims.iat, 3600);
   assert.equal((await request("/api/auth/register", input)).status, 409);
