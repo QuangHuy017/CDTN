@@ -7,11 +7,15 @@ const Room = require("./models/Room");
 const Amenity = require("./models/Amenity");
 const ContactRequest = require("./models/ContactRequest");
 const { createApp } = require("./app");
+const { resolveMongoUri } = require("./mongo-uri");
 
 async function start() {
   if (!process.env.MONGO_URI) throw new Error("Chưa cấu hình MONGO_URI trong .env.");
   const app = createApp({ secret: process.env.JWT_SECRET, expiresIn: process.env.JWT_EXPIRES_IN || "1h" });
-  await mongoose.connect(process.env.MONGO_URI, { dbName: process.env.MONGO_DB || "UniHome", serverSelectionTimeoutMS: 10000, connectTimeoutMS: 10000 });
+  const mongoUri = process.env.MONGO_DNS_OVER_HTTPS === "true"
+    ? await resolveMongoUri(process.env.MONGO_URI)
+    : process.env.MONGO_URI;
+  await mongoose.connect(mongoUri, { dbName: process.env.MONGO_DB || "UniHome", serverSelectionTimeoutMS: 10000, connectTimeoutMS: 10000 });
   await mongoose.connection.db.admin().ping();
   console.log(`Đã kết nối MongoDB: ${mongoose.connection.name}`);
   // Ensure unique indexes exist before accepting writes to any resource.

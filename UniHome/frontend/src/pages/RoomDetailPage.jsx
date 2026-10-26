@@ -7,18 +7,19 @@ import { roomStatuses } from "../components/rooms/RoomCard";
 import RoomGallery from "../components/rooms/RoomGallery";
 import RoomCosts from "../components/rooms/RoomCosts";
 import RoomVisitCard from "../components/rooms/RoomVisitCard";
+import BuildingMap from "../components/rooms/BuildingMap";
 
 function DetailContent({ room }) {
   const [favorites, setFavorites] = useState(readFavorites);
   const [message, setMessage] = useState("");
   const building = room.building;
   const status = roomStatuses[room.trangThai] || { label: "Chưa cập nhật", color: "bg-slate-100 text-slate-600" };
-  const amenities = [...new Set([...(room.tienIch || []), ...(building?.tienIchChung || [])])];
+  const amenities = [...new Set(room.tienIch || [])];
   const saved = favorites.includes(room._id);
   const coordinates = building?.toaDo?.coordinates;
   const hasCoordinates = Array.isArray(coordinates) && coordinates.length === 2 && coordinates.every(Number.isFinite) && Math.abs(coordinates[0]) <= 180 && Math.abs(coordinates[1]) <= 90;
-  const mapQuery = hasCoordinates ? `${coordinates[1]},${coordinates[0]}` : building?.diaChi;
-  const mapUrl = mapQuery ? `https://www.google.com/maps?q=${encodeURIComponent(mapQuery)}` : null;
+  const mapQuery = hasCoordinates ? `${coordinates[1]},${coordinates[0]}` : null;
+  const mapUrl = mapQuery ? `https://www.openstreetmap.org/?mlat=${coordinates[1]}&mlon=${coordinates[0]}#map=16/${coordinates[1]}/${coordinates[0]}` : null;
 
   function saveRoom() {
     const next = saved ? favorites.filter((id) => id !== room._id) : [...favorites, room._id];
@@ -54,7 +55,7 @@ function DetailContent({ room }) {
           <RoomCosts room={room} />
           <section className="rounded-2xl border border-slate-200 bg-white p-5 lg:p-6" aria-labelledby="amenities-heading"><div className="flex items-center justify-between gap-3"><h2 id="amenities-heading" className="border-l-4 border-blue-600 pl-3 text-base font-bold">Nội thất & Tiện ích sẵn có</h2><span className="text-[10px] text-slate-400">{amenities.length} tiện ích</span></div>{amenities.length ? <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">{amenities.map((amenity) => <li key={amenity} className="flex items-center gap-2 rounded-xl border border-slate-100 bg-[#f8faff] p-3 text-xs leading-relaxed"><span className="grid size-7 shrink-0 place-items-center rounded-lg bg-white text-blue-600">✓</span>{amenity}</li>)}</ul> : <p className="mt-4 text-sm text-slate-500">Tiện ích đang được cập nhật.</p>}</section>
           <section className="rounded-2xl border border-slate-200 bg-white p-5 lg:p-6" aria-labelledby="description-heading"><h2 id="description-heading" className="border-l-4 border-blue-600 pl-3 text-base font-bold">Mô tả chi tiết phòng</h2><p className="mt-5 text-sm leading-7 whitespace-pre-line text-slate-600">{room.moTa || "Thông tin mô tả phòng đang được cập nhật."}</p>{building?.noiQuy?.length > 0 && <div className="mt-5 rounded-xl border border-blue-100 bg-blue-50/60 p-4"><h3 className="text-sm font-semibold text-blue-800">Nội quy tại cơ sở</h3><ul className="mt-3 space-y-2 text-xs leading-relaxed text-slate-600">{building.noiQuy.map((rule) => <li key={rule}>• {rule}</li>)}</ul></div>}</section>
-          <section id="room-location" className="scroll-mt-6 rounded-2xl border border-slate-200 bg-white p-5 lg:p-6" aria-labelledby="location-heading"><div className="flex items-center justify-between gap-4"><h2 id="location-heading" className="border-l-4 border-blue-600 pl-3 text-base font-bold">Vị trí phòng & Bản đồ giao thông</h2>{mapUrl && <a href={mapUrl} target="_blank" rel="noreferrer" className="shrink-0 text-[10px] text-blue-600 hover:underline">Mở trên Google Maps ↗</a>}</div>{mapQuery ? <iframe title={`Bản đồ vị trí ${room.tenPhong}`} src={`https://maps.google.com/maps?q=${encodeURIComponent(mapQuery)}&z=16&output=embed`} loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="mt-5 h-72 w-full rounded-xl border border-slate-200" /> : <p className="mt-4 text-sm text-slate-500">Vị trí đang được cập nhật.</p>}<p className="mt-3 text-xs text-slate-500">{building?.diaChi}</p></section>
+          <section id="room-location" className="scroll-mt-6 rounded-2xl border border-slate-200 bg-white p-5 lg:p-6" aria-labelledby="location-heading"><div className="flex items-center justify-between gap-4"><h2 id="location-heading" className="border-l-4 border-blue-600 pl-3 text-base font-bold">Vị trí phòng & Bản đồ giao thông</h2>{mapUrl && <a href={mapUrl} target="_blank" rel="noreferrer" className="shrink-0 text-[10px] text-blue-600 hover:underline">Mở trên OpenStreetMap ↗</a>}</div>{mapQuery ? <div className="mt-5"><BuildingMap buildings={[building]} /></div> : <p className="mt-4 text-sm text-slate-500">Vị trí đang được cập nhật.</p>}<p className="mt-3 text-xs text-slate-500">{building?.diaChi}</p></section>
           <section className="rounded-2xl border border-slate-200 bg-white p-5 lg:p-6" aria-labelledby="reviews-heading"><h2 id="reviews-heading" className="border-l-4 border-blue-600 pl-3 text-base font-bold">Đánh giá từ khách thuê</h2><p className="mt-5 rounded-xl bg-slate-50 p-5 text-sm text-slate-500">Phòng này chưa có đánh giá được đăng tải.</p></section>
         </div>
         <RoomVisitCard room={room} />

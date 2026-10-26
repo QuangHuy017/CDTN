@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const { rateLimit } = require("express-rate-limit");
 const User = require("./models/User");
 
-function createApp({ secret, expiresIn = "1h", users = User, catalogModels, contactModels, adminModels } = {}) {
+function createApp({ secret, expiresIn = "1h", users = User, catalogModels, contactModels, adminModels, uploadDirectory, imageStorage } = {}) {
   if (typeof secret !== "string" || Buffer.byteLength(secret) < 32) {
     throw new Error("JWT_SECRET phải có ít nhất 32 byte.");
   }
@@ -167,6 +167,7 @@ function createApp({ secret, expiresIn = "1h", users = User, catalogModels, cont
   });
   app.get("/api/admin/me", authenticate, authorize("admin"), (req, res) => res.json({ user: publicUser(req.user) }));
   app.get("/api/tenant/me", authenticate, authorize("tenant"), (req, res) => res.json({ user: publicUser(req.user) }));
+  app.use("/api/uploads/rooms", require("./routes/uploads")({ authenticate, authorize, directory: uploadDirectory, imageStorage }));
   app.use("/api", require("./routes/catalog")({ authenticate, authorize, models: catalogModels }));
   app.use("/api/contact-requests", require("./routes/contactRequests")({ authenticate, authorize, models: contactModels }));
   app.use("/api/admin", require("./routes/admin")({ authenticate, authorize, models: adminModels }));

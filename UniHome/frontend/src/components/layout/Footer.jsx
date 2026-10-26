@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "../common/Icon";
+import { Link } from "react-router-dom";
 
 const information = [
   {
@@ -43,7 +44,7 @@ export default function Footer() {
       <div className="mx-auto max-w-[1440px] px-4 pt-9 pb-8 sm:px-6 lg:px-10">
         <div className="flex flex-col justify-between gap-6 border-b border-[#e3eaf7] pb-6 md:flex-row md:items-center">
           <a href="/" className="inline-flex w-fit items-center gap-2 text-lg font-bold text-[#006b9e] no-underline" aria-label="UniHome — Trang chủ"><Icon name="building" className="size-6!" /><span>UniHome</span></a>
-          <nav aria-label="Thông tin và hỗ trợ" className="flex flex-wrap items-center gap-x-7 gap-y-3">{information.map((item) => <button type="button" key={item.title} onClick={() => setSelected(item)} className="rounded text-xs text-[#465163] transition-colors hover:text-[#0073ae] hover:underline">{item.title}</button>)}</nav>
+          <nav aria-label="Thông tin và hỗ trợ" className="flex flex-wrap items-center gap-x-7 gap-y-3">{information.map((item) => item.title === "Về chúng tôi" ? <Link key={item.title} to="/?page=about" className="rounded text-xs text-[#465163] transition-colors hover:text-[#0073ae] hover:underline">{item.title}</Link> : <button type="button" key={item.title} onClick={() => setSelected(item)} className="rounded text-xs text-[#465163] transition-colors hover:text-[#0073ae] hover:underline">{item.title}</button>)}</nav>
         </div>
         <div className="flex flex-col justify-between gap-3 pt-4 text-[11px] leading-relaxed text-[#536072] lg:flex-row lg:items-center">
           <p>© {new Date().getFullYear()} UniHome - Hệ thống tìm kiếm và thuê phòng trọ thông minh cho sinh viên. All rights reserved.</p>

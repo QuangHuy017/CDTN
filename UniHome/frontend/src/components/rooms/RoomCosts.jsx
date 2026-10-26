@@ -3,12 +3,12 @@ import { formatRent } from "./RoomCard";
 
 export default function RoomCosts({ room }) {
   const building = room.building;
-  const electricity = room.giaDien ?? building?.giaDien;
-  const water = room.giaNuoc ?? building?.giaNuoc;
+  const electricity = room.giaDien;
+  const water = room.giaNuoc;
   const deposit = building?.tienCocThang;
   const rows = [
-    { name: "Tiền điện sinh hoạt", price: electricity != null ? `${formatRent(electricity)} đ / kWh` : "Chưa cập nhật", note: "Theo mức giá của cơ sở", icon: "bolt" },
-    { name: "Tiền nước sinh hoạt", price: water != null ? `${formatRent(water)} đ${building?.donViNuoc ? ` / ${building.donViNuoc}` : ""}` : "Chưa cập nhật", note: "Theo đơn vị tính do cơ sở công bố", icon: "money" },
+    { name: "Tiền điện sinh hoạt", price: electricity != null ? `${formatRent(electricity)} đ / kWh` : "Chưa cập nhật", note: "Theo mức giá thiết lập cho phòng", icon: "bolt" },
+    { name: "Tiền nước sinh hoạt", price: water != null ? `${formatRent(water)} đ${room.donViNuoc ? ` / ${room.donViNuoc}` : ""}` : "Chưa cập nhật", note: "Theo đơn vị tính của phòng", icon: "money" },
     { name: "Internet & dịch vụ chung", price: "Liên hệ cơ sở", note: "Chưa có đơn giá trong thông tin phòng", icon: "bot" },
     { name: "Tiền đặt cọc phòng", price: deposit != null ? `${formatRent(room.giaThue * deposit)} đ` : "Chưa cập nhật", note: deposit != null ? `Tương đương ${deposit} tháng tiền thuê` : "Xác nhận khi ký hợp đồng", icon: "shield" },
     { name: "Thời hạn hợp đồng", price: "Thỏa thuận", note: "Trao đổi trực tiếp với cơ sở", icon: "document" },

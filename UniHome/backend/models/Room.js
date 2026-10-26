@@ -14,8 +14,10 @@ const schema = new mongoose.Schema({
   tienIch: [String],
   hinhAnh: [String],
   trangThai: { type: String, enum: ["con_trong", "da_thue", "sap_trong"], default: "con_trong" },
-  giaDien: Number,
-  giaNuoc: Number
+  giaDien: { type: Number, min: 0 },
+  giaNuoc: { type: Number, min: 0 },
+  donViNuoc: String,
+  roomSettingsVersion: Number
 }, { timestamps: true, collection: "Phong" });
 schema.index({ maCoSo: 1, giaThue: 1 });
 schema.index({ loaiPhong: 1, dienTich: 1 });

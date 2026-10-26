@@ -7,7 +7,7 @@ const navigation = [
   { key: "rooms", label: "Bản đồ phòng", href: "/?page=rooms" },
   { key: "favorites", label: "Phòng yêu thích", href: "/?page=favorites", icon: "heart" },
   { key: "about", label: "Giới thiệu", href: "/?page=about" },
-  { key: "contact", label: "Liên hệ", href: "/?page=contact" },
+  { key: "contact", label: "Liên hệ", href: "/appointments" },
 ];
 
 export default function Header({ user, onLogin, onLogout, onRegister }) {
@@ -45,7 +45,7 @@ export default function Header({ user, onLogin, onLogout, onRegister }) {
   }, []);
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const activePage = location.pathname.startsWith("/rooms/") ? "rooms" : params.get("page") || "home";
+  const activePage = location.pathname === "/appointments" ? "contact" : location.pathname.startsWith("/rooms/") ? "rooms" : params.get("page") || "home";
   return (
     <header className="border-b border-[#e8edf5] bg-white">
       <div className="mx-auto flex min-h-20 max-w-[1440px] flex-wrap items-center gap-3 px-4 pt-3.5 sm:px-6 min-[1024px]:flex-nowrap min-[1024px]:gap-5 min-[1024px]:px-8 min-[1024px]:pt-0 xl:gap-8 xl:px-10">

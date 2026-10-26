@@ -1,5 +1,38 @@
 @import "tailwindcss";
 
+.unihome-about { font-size: 15px; line-height: 1.75; overflow-wrap: anywhere; }
+.unihome-about p { margin-top: 16px; }
+.unihome-about h2 { margin-top: 36px; margin-bottom: 12px; font-size: 24px; font-weight: 700; line-height: 1.35; scroll-margin-top: 24px; }
+.unihome-about h3 { margin-top: 24px; margin-bottom: 8px; font-size: 19px; font-weight: 700; line-height: 1.4; }
+.unihome-about ul, .unihome-about ol { padding-left: 25px; margin-top: 16px; }
+.unihome-about ul { list-style: disc; }
+.unihome-about ol { list-style: decimal; }
+.unihome-about li { margin-top: 10px; padding-left: 3px; }
+.unihome-about p a { color: #1d4ed8; text-decoration: underline; text-underline-offset: 3px; }
+.unihome-about p a:hover { color: #1e40af; }
+
+.unihome-explorer { display: grid; grid-template-columns: 350px minmax(0, 1fr); height: calc(100dvh - 82px); min-height: 580px; background: white; border-bottom: 1px solid #e2e8f0; }
+.unihome-explorer-sidebar { display: flex; flex-direction: column; min-height: 0; border-right: 1px solid #e2e8f0; }
+.unihome-building-list { overflow-y: auto; min-height: 0; padding: 12px; scrollbar-width: thin; }
+.unihome-building-card { display: flex; align-items: stretch; gap: 12px; width: 100%; padding: 10px; margin-bottom: 12px; border: 1px solid #e2e8f0; border-radius: 10px; text-align: left; background: white; cursor: pointer; transition: border-color .15s, background .15s; }
+.unihome-building-card:hover, .unihome-building-card.is-selected { border-color: #0284c7; background: #f0f9ff; }
+.unihome-building-card:focus-visible { outline: 2px solid #0284c7; outline-offset: 2px; }
+.unihome-building-art { display: flex; flex-direction: column; justify-content: center; align-items: center; flex: 0 0 86px; border-radius: 7px; background: linear-gradient(145deg, #e0f2fe, #c7e6f2); color: #3786a5; }
+.unihome-building-art svg { width: 66px; height: 66px; }
+.unihome-building-art span { margin: 4px 0 8px; font-size: 9px; letter-spacing: .12em; font-weight: 700; }
+.unihome-explorer-map { position: relative; min-width: 0; min-height: 0; }
+.unihome-map-label.leaflet-tooltip { border: none; border-radius: 9px; background: white; color: #334155; padding: 10px 14px; box-shadow: 0 3px 14px #0f172a25; text-align: center; font-family: inherit; font-size: 11px; cursor: pointer; }
+.unihome-map-label.is-selected.leaflet-tooltip { background: #0369a1; color: white; }
+.unihome-map-label.is-selected span { color: #e0f2fe !important; }
+.unihome-map-label.is-selected.leaflet-tooltip-top::before { border-top-color: #0369a1; }
+@media (max-width: 767px) {
+  .unihome-explorer { display: flex; flex-direction: column; height: auto; min-height: 0; }
+  .unihome-explorer-sidebar { border-right: 0; }
+  .unihome-building-list { display: flex; gap: 10px; overflow-x: auto; max-height: 200px; }
+  .unihome-building-card { flex: 0 0 290px; margin-bottom: 0; }
+  .unihome-explorer-map { height: 55dvh; min-height: 440px; }
+}
+
 :root {
   font-family: "Segoe UI", Arial, sans-serif;
   color: #102d4a;

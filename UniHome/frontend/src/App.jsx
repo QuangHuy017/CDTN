@@ -5,6 +5,8 @@ import AuthHeader from "./components/auth/AuthHeader";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import HomePage from "./pages/HomePage";
+import MapPage from "./pages/MapPage";
+import AboutPage from "./pages/AboutPage";
 import FavoritesPage from "./pages/FavoritesPage";
 import AccountPage from "./pages/AccountPage";
 import ContactRequestsPage from "./pages/ContactRequestsPage";
@@ -27,8 +29,11 @@ export default function App() {
       return () => cancelAnimationFrame(frame);
     }
     window.scrollTo(0, 0);
-  }, [location.pathname, location.hash]);
+  }, [location.pathname, location.search, location.hash]);
   const { session, initializing, error: sessionError, signIn, signOut } = useAuthSession();
+  if (location.pathname === "/" && new URLSearchParams(location.search).get("page") === "contact") {
+    return <Navigate to="/appointments" replace />;
+  }
   function openAuth(mode) {
     navigate(`/${mode}`, { state: { from: location.pathname + location.search } });
   }
@@ -49,7 +54,7 @@ export default function App() {
       {authPage ? <AuthHeader /> : <Header user={session?.user} onLogin={() => openAuth("login")} onRegister={() => openAuth("register")} onLogout={signOut} />}
       {sessionError && <p role="alert" className="bg-red-50 p-3 text-center text-sm text-red-700">{sessionError}</p>}
       <Routes>
-        <Route path="/" element={new URLSearchParams(location.search).get("page") === "favorites" ? <FavoritesPage user={session?.user} onLogout={signOut} /> : session?.user.role === "admin" && !location.search && !location.hash ? <Navigate to="/admin" replace /> : <HomePage />} />
+        <Route path="/" element={new URLSearchParams(location.search).get("page") === "favorites" ? <FavoritesPage user={session?.user} onLogout={signOut} /> : new URLSearchParams(location.search).get("page") === "rooms" ? <MapPage /> : new URLSearchParams(location.search).get("page") === "about" ? <AboutPage /> : session?.user.role === "admin" && !location.search && !location.hash ? <Navigate to="/admin" replace /> : <HomePage />} />
         <Route path="/rooms/:id" element={<RoomDetailPage />} />
         {["/account", "/appointments"].map((path) => <Route key={path} path={path} element={initializing ? <main className="flex-1 p-12 text-center text-sm text-slate-500" role="status">Đang kiểm tra phiên đăng nhập…</main> : session ? path === "/appointments" ? <ContactRequestsPage user={session.user} onLogout={signOut} /> : <AccountPage user={session.user} onUpdated={(data) => signIn({ ...data, expiresAt: session.expiresAt })} onLogout={signOut} /> : <Navigate to="/login" state={{ from: path }} replace />} />)}
         <Route path="/login" element={initializing ? <main className="flex-1 p-12 text-center text-sm text-slate-500" role="status">Đang kiểm tra phiên đăng nhập…</main> : session ? <Navigate to={session.user.role === "admin" ? "/admin" : "/"} replace /> : <LoginPage onSuccess={handleLogin} />} />

@@ -25,7 +25,7 @@ function pagination(query, fields) {
 }
 const fields = {
   buildings: ["maCoSo", "tenCoSo", "diaChi", "khuVuc", "soTang", "soPhongMoiTang", "tongSoPhong", "toaDo", "giaDien", "giaNuoc", "donViNuoc", "tienCocThang", "tienIchChung", "noiQuy"],
-  rooms: ["maPhong", "maCoSo", "tenPhong", "soPhong", "giaThue", "dienTich", "loaiPhong", "tang", "soNguoiToiDa", "moTa", "tienIch", "hinhAnh", "trangThai", "giaDien", "giaNuoc"],
+  rooms: ["maPhong", "maCoSo", "tenPhong", "soPhong", "giaThue", "dienTich", "loaiPhong", "tang", "soNguoiToiDa", "moTa", "tienIch", "hinhAnh", "trangThai", "giaDien", "giaNuoc", "donViNuoc"],
   amenities: ["maTienIch", "tenTienIch", "moTa"]
 };
 const required = {
@@ -74,7 +74,7 @@ module.exports = function catalog({ authenticate, authorize, models = { Building
     const { model, code, search } = config;
     router.get(`/${resource}`, async (req, res) => {
       const q = req.query;
-      const supported = ["q", "page", "limit", "sort", ...(resource === "rooms" ? ["khuVuc", "maCoSo", "giaThueMin", "giaThueMax", "dienTichMin", "dienTichMax", "loaiPhong", "tienIch", "trangThai"] : resource === "buildings" ? ["khuVuc", "tienIch"] : [])];
+      const supported = ["q", "page", "limit", "sort", ...(resource === "rooms" ? ["lat", "lng", "radiusKm", "khuVuc", "maCoSo", "giaThueMin", "giaThueMax", "dienTichMin", "dienTichMax", "loaiPhong", "tienIch", "trangThai"] : resource === "buildings" ? ["khuVuc", "tienIch"] : [])];
       if (Object.keys(q).some((key) => !supported.includes(key))) fail(400, "Tham số truy vấn không được hỗ trợ.");
       const p = pagination(q, ["createdAt", ...fields[resource].filter((f) => !["toaDo", "noiQuy", "tienIch", "tienIchChung", "hinhAnh"].includes(f))]);
       const filter = {};
@@ -91,6 +91,18 @@ module.exports = function catalog({ authenticate, authorize, models = { Building
         }
       }
       if (resource === "rooms") {
+        if (["lat", "lng", "radiusKm"].some((key) => q[key] !== undefined)) {
+          const coordinate = (key, max) => {
+            if (typeof q[key] !== "string" || !q[key].trim() || !Number.isFinite(Number(q[key])) || Math.abs(Number(q[key])) > max) fail(400, `${key} không hợp lệ.`);
+            return Number(q[key]);
+          };
+          const lat = coordinate("lat", 90), lng = coordinate("lng", 180);
+          const radiusKm = number(q.radiusKm, "radiusKm");
+          if (radiusKm <= 0 || radiusKm > 100) fail(400, "Bán kính phải lớn hơn 0 và tối đa 100 km.");
+          const nearby = await models.Building.find({ toaDo: { $geoWithin: { $centerSphere: [[lng, lat], radiusKm / 6371.0088] } } }).select("maCoSo").lean();
+          const codes = nearby.map((building) => building.maCoSo);
+          filter.maCoSo = { $in: filter.maCoSo ? codes.filter((code) => filter.maCoSo.$in.includes(code)) : codes };
+        }
         if (q.maCoSo !== undefined) {
           const building = string(q.maCoSo, "maCoSo");
           if (filter.maCoSo) filter.maCoSo.$in = filter.maCoSo.$in.filter((id) => id === building);
@@ -109,11 +121,7 @@ module.exports = function catalog({ authenticate, authorize, models = { Building
         const amenities = [...new Set(string(q.tienIch, "tienIch").split(",").map((a) => string(a, "tienIch")))];
         if (resource === "buildings") filter.tienIchChung = { $all: amenities };
         else {
-          // Each requested amenity may be supplied by the room or its building.
-          filter.$and = await Promise.all(amenities.map(async (name) => {
-            const buildings = await models.Building.find({ tienIchChung: name }).select("maCoSo").lean();
-            return { $or: [{ tienIch: name }, { maCoSo: { $in: buildings.map((b) => b.maCoSo) } }] };
-          }));
+          filter.tienIch = { $all: amenities };
         }
       }
       const [data, total] = await Promise.all([model.find(filter).sort(p.sort).skip(p.skip).limit(p.limit).lean(), model.countDocuments(filter)]);
