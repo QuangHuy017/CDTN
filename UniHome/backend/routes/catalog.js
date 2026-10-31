@@ -5,6 +5,11 @@ const Amenity = require("../models/Amenity");
 
 const fail = (status, message) => { throw Object.assign(new Error(message), { status }); };
 const literal = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+function locationRegex(value) {
+  const groups = { a: "aàáạảãâầấậẩẫăằắặẳẵ", e: "eèéẹẻẽêềếệểễ", i: "iìíịỉĩ", o: "oòóọỏõôồốộổỗơờớợởỡ", u: "uùúụủũưừứựửữ", y: "yỳýỵỷỹ", d: "dđ" };
+  const normalized = value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/đ/gi, "d").toLowerCase();
+  return new RegExp(normalized.split(/\s+/).map((word) => [...word].map((char) => groups[char] ? `[${groups[char]}]` : literal(char)).join("")).join("\\s+"), "i");
+}
 function string(value, field) {
   if (typeof value !== "string" || !value.trim() || value.length > 300) fail(400, `${field} phải là chuỗi từ 1 đến 300 ký tự.`);
   return value.trim();
@@ -74,7 +79,7 @@ module.exports = function catalog({ authenticate, authorize, models = { Building
     const { model, code, search } = config;
     router.get(`/${resource}`, async (req, res) => {
       const q = req.query;
-      const supported = ["q", "page", "limit", "sort", ...(resource === "rooms" ? ["lat", "lng", "radiusKm", "khuVuc", "maCoSo", "giaThueMin", "giaThueMax", "dienTichMin", "dienTichMax", "loaiPhong", "tienIch", "trangThai"] : resource === "buildings" ? ["khuVuc", "tienIch"] : [])];
+      const supported = ["q", "page", "limit", "sort", ...(resource === "rooms" ? ["location", "lat", "lng", "radiusKm", "khuVuc", "maCoSo", "giaThueMin", "giaThueMax", "dienTichMin", "dienTichMax", "loaiPhong", "tienIch", "trangThai"] : resource === "buildings" ? ["khuVuc", "tienIch"] : [])];
       if (Object.keys(q).some((key) => !supported.includes(key))) fail(400, "Tham số truy vấn không được hỗ trợ.");
       const p = pagination(q, ["createdAt", ...fields[resource].filter((f) => !["toaDo", "noiQuy", "tienIch", "tienIchChung", "hinhAnh"].includes(f))]);
       const filter = {};
@@ -91,6 +96,16 @@ module.exports = function catalog({ authenticate, authorize, models = { Building
         }
       }
       if (resource === "rooms") {
+        if (q.location !== undefined) {
+          const location = string(q.location, "location");
+          const regex = locationRegex(location);
+          const buildingFilter = { $or: ["tenCoSo", "diaChi", "khuVuc", "maCoSo"].map((field) => ({ [field]: regex })) };
+          const matching = await models.Building.find(buildingFilter).select("maCoSo toaDo").lean();
+          const centers = matching.map((building) => building.toaDo?.coordinates).filter((point) => Array.isArray(point) && point.length === 2 && point.every(Number.isFinite));
+          const nearby = centers.length ? await models.Building.find({ $or: centers.map((point) => ({ toaDo: { $geoWithin: { $centerSphere: [point, 3 / 6371.0088] } } })) }).select("maCoSo").lean() : [];
+          const codes = [...new Set([...matching, ...nearby].map((building) => building.maCoSo))];
+          filter.maCoSo = { $in: filter.maCoSo ? codes.filter((code) => filter.maCoSo.$in.includes(code)) : codes };
+        }
         if (["lat", "lng", "radiusKm"].some((key) => q[key] !== undefined)) {
           const coordinate = (key, max) => {
             if (typeof q[key] !== "string" || !q[key].trim() || !Number.isFinite(Number(q[key])) || Math.abs(Number(q[key])) > max) fail(400, `${key} không hợp lệ.`);

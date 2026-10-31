@@ -8,7 +8,8 @@ const schema = new mongoose.Schema({
   scheduledAt: { type: Date, required: true },
   note: { type: String, default: "", maxlength: 500 },
   status: { type: String, enum: ["pending", "confirmed", "completed", "cancelled"], default: "pending" },
-  managerNote: { type: String, default: "", maxlength: 1000 }
+  managerNote: { type: String, default: "", maxlength: 1000 },
+  approvalNotification: { createdAt: Date, readAt: { type: Date, default: null }, note: String }
 }, { timestamps: true, collection: "contact_requests" });
 schema.index({ userId: 1, createdAt: -1 });
 schema.index({ userId: 1, roomId: 1, scheduledAt: 1 }, { unique: true, partialFilterExpression: { status: { $in: ["pending", "confirmed"] } } });

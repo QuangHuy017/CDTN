@@ -21,6 +21,16 @@ async function authenticate(endpoint, { name, email, identifier, phone, password
 export const login = (data, signal) => authenticate("login", data, signal);
 export const register = (data, signal) => authenticate("register", data, signal);
 
+export async function changePassword({ currentPassword, newPassword }) {
+  let response;
+  try {
+    response = await fetch("/api/auth/change-password", { method: "POST", credentials: "same-origin", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ currentPassword, newPassword }), signal: AbortSignal.timeout(15000) });
+  } catch { throw new Error("Không thể kết nối máy chủ. Vui lòng thử lại."); }
+  const data = await response.json().catch(() => null);
+  if (!response.ok) throw new Error(data?.message || "Chưa đổi được mật khẩu.");
+  return data;
+}
+
 export async function getCurrentUser(signal) {
   const response = await fetch("/api/auth/me", { credentials: "same-origin", cache: "no-store", signal });
   const data = await response.json().catch(() => null);

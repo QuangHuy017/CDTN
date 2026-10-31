@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { readSavedRooms } from "../services/savedRooms";
 import BuildingMap, { buildingPosition } from "../components/rooms/BuildingMap";
 import RoomCard from "../components/rooms/RoomCard";
@@ -16,13 +17,19 @@ async function loadBuildings(signal) {
 
 const inputClass = "mt-1 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm";
 export default function MapPage() {
+  const location = useLocation();
   const [buildings, setBuildings] = useState([]), [buildingsError, setBuildingsError] = useState("");
   const [buildingLoading, setBuildingLoading] = useState(true);
-  const [selectedCode, setSelectedCode] = useState("");
+  const [selectedCode, setSelectedCode] = useState(() => new URLSearchParams(window.location.search).get("building") || "");
   const [buildingSearch, setBuildingSearch] = useState("");
   const selectBuilding = useCallback((code) => { setSelectedCode(code); setPage(1); }, []);
   const [form, setForm] = useState({ lat: "", lng: "", radiusKm: "3", label: "" });
   const [criteria, setCriteria] = useState(null), [page, setPage] = useState(1), [result, setResult] = useState(null);
+  useEffect(() => {
+    setSelectedCode(new URLSearchParams(location.search).get("building") || "");
+    setCriteria(null);
+    setPage(1);
+  }, [location.search]);
   const [loading, setLoading] = useState(true), [error, setError] = useState(""), [retry, setRetry] = useState(0);
   const [saved, setSaved] = useState(readSavedRooms), [saveMessage, setSaveMessage] = useState("");
   function toggleSaved(id) {

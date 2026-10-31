@@ -1,3 +1,4 @@
+import { useFavoriteAccess } from "../../contexts/FavoriteAccess";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Icon from "../common/Icon";
@@ -9,7 +10,9 @@ export const roomStatuses = {
   da_thue: { label: "Đã thuê", color: "bg-slate-200 text-slate-700" },
 };
 
-export default function RoomCard({ room, saved, onSave }) {
+export default function RoomCard({ room, saved: storedSaved, onSave }) {
+  const { signedIn, requestLogin } = useFavoriteAccess();
+  const saved = signedIn && storedSaved;
   const [failedImage, setFailedImage] = useState(false);
   const status = roomStatuses[room.trangThai] || { label: "Chưa cập nhật", color: "bg-slate-100 text-slate-600" };
   const address = room.building?.diaChi || room.building?.khuVuc || room.maCoSo;
@@ -20,7 +23,7 @@ export default function RoomCard({ room, saved, onSave }) {
           {room.hinhAnh?.[0] && !failedImage ? <img className="size-full object-cover transition-transform duration-300 hover:scale-[1.03]" src={room.hinhAnh[0]} alt={room.tenPhong} loading="lazy" onError={() => setFailedImage(true)} /> : <span className="flex size-full flex-col items-center justify-center gap-2 text-xs"><Icon name="building" className="size-10!" />Chưa có hình ảnh</span>}
         </Link>
         <span className={`pointer-events-none absolute top-3 left-3 flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium ${status.color}`}><span className="size-1.5 rounded-full bg-current" />{status.label}</span>
-        <button type="button" className={`absolute top-3 right-3 grid size-8 place-items-center rounded-full bg-white/95 shadow-sm transition hover:scale-105 ${saved ? "text-rose-500" : "text-slate-600"}`} aria-label={saved ? `Bỏ lưu ${room.tenPhong}` : `Lưu ${room.tenPhong}`} aria-pressed={saved} onClick={onSave}><Icon name="heart" className={`size-[18px]! ${saved ? "fill-rose-100!" : ""}`} /></button>
+        <button type="button" className={`absolute top-3 right-3 grid size-8 place-items-center rounded-full bg-white/95 shadow-sm transition hover:scale-105 ${saved ? "text-rose-500" : "text-slate-600"}`} aria-label={saved ? `Bỏ lưu ${room.tenPhong}` : `Lưu ${room.tenPhong}`} aria-pressed={saved} onClick={signedIn ? onSave : requestLogin}><Icon name="heart" className={`size-[18px]! ${saved ? "fill-rose-100!" : ""}`} /></button>
         <span className="pointer-events-none absolute bottom-2 left-2 rounded bg-[#26374dcc] px-2 py-1 font-mono text-[10px] text-white">Mã: {room.maPhong}</span>
       </div>
       <div className="flex-1 p-4">

@@ -46,3 +46,10 @@ GET /api/rooms?maCoSo=CS01&giaThueMin=2000000&giaThueMax=4000000&dienTichMin=20&
 Chi tiết/tạo/cập nhật trả `{ "data": { ... } }`. Lỗi trả `{ "message": "..." }`; dữ liệu không hợp lệ trả 400, chưa đăng nhập 401, thiếu quyền 403, không tồn tại 404, trùng mã/tên hoặc đang sử dụng 409.
 
 Các kiểm tra tham chiếu được thực hiện ở tầng ứng dụng, chưa dùng transaction: các thao tác ghi đồng thời có thể gây xung đột tham chiếu. Không có xóa dây chuyền.
+
+### Tìm trường và cơ sở gần trường
+
+- `GET /api/places/search?q=<tên trường hoặc địa điểm>`: trả các địa điểm khớp tên trong phạm vi Việt Nam, gồm `id`, `name`, `address`, `coordinates` ([kinh độ, vĩ độ]). Gọi khi người dùng nhấn Enter/kính lúp. Tên trường có nhiều cơ sở cần người dùng chọn địa điểm.
+- `GET /api/places/nearby-buildings?lat=...&lng=...`: trả cơ sở có tọa độ hợp lệ trong 5 km, sắp theo `distanceKm` tăng dần. Khoảng cách đường chim bay, không phải quãng đường di chuyển. Không có kết quả trả `data: []`.
+- Tra vị trí dùng Photon/OpenStreetMap; cấu hình `PHOTON_SEARCH_URL` để đổi máy chủ. Cache kết quả 24 giờ (tối đa 200 từ khóa), giới hạn truy vấn upstream 1 giây/lần và giới hạn API 30 yêu cầu/phút/IP. Lỗi dịch vụ bản đồ trả 502; quá nhanh trả 429.
+- Máy chủ Photon công cộng dành cho lưu lượng vừa phải và không đảm bảo hoạt động; khi triển khai nhiều người dùng, dùng máy chủ riêng hoặc dịch vụ phù hợp: https://github.com/komoot/photon . UI ghi nguồn OpenStreetMap.

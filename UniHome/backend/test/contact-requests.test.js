@@ -9,15 +9,17 @@ test("contact requests: create, ownership, validation, cancellation and admin st
   let roomStatus = "con_trong";
   const room = { _id: 1, maPhong: "P01", maCoSo: "CS01", tenPhong: "Phòng 1", giaThue: 3000000, hinhAnh: [] };
   const Requests = {
-    find(filter) { return { sort() { return this; }, async lean() { return records.filter((item) => item.userId === filter.userId); } }; },
+    find(filter) { return { sort() { return this; }, async lean() { return records.filter((item) => item.userId === filter.userId && (!filter["approvalNotification.createdAt"] || item.approvalNotification?.createdAt)); } }; },
     async create(body) {
       if (records.some((item) => item.userId === body.userId && item.roomId === body.roomId && +item.scheduledAt === +body.scheduledAt && ["pending", "confirmed"].includes(item.status))) throw Object.assign(new Error("duplicate"), { code: 11000 });
       const doc = { ...body, _id: nextId++, status: "pending", managerNote: "", createdAt: new Date() }; records.push(doc); return doc;
     },
     async findOneAndUpdate(filter, update) {
-      const doc = records.find((item) => item._id === filter._id && (filter.userId === undefined || item.userId === filter.userId) && filter.status.$in.includes(item.status));
+      const doc = records.find((item) => item._id === filter._id && (filter.userId === undefined || item.userId === filter.userId) && (!filter.status || filter.status.$in.includes(item.status)) && (!filter["approvalNotification.createdAt"] || item.approvalNotification?.createdAt));
       if (!doc) return null;
-      Object.assign(doc, update.$set); return doc;
+      if (update.$set["approvalNotification.readAt"]) doc.approvalNotification.readAt = update.$set["approvalNotification.readAt"];
+      else Object.assign(doc, update.$set);
+      return doc;
     }
   };
   const users = { async findById(id) { return { _id: id, hoTen: "An", email: "an@example.com", vaiTro: id === 3 ? "admin" : "user", trangThai: "hoat_dong" }; } };
@@ -43,6 +45,18 @@ test("contact requests: create, ownership, validation, cancellation and admin st
   assert.equal((await request("/1/status", "PATCH", { status: "completed" }, 3)).status, 409);
   assert.equal((await request("/1/status", "PATCH", { status: "confirmed", managerNote: "Mời bạn đến đúng giờ." }, 3)).status, 200);
   assert.equal((await request()).body.data[0].managerNote, "Mời bạn đến đúng giờ.");
+  const notifications = await request("/notifications");
+  assert.equal(notifications.body.data.length, 1);
+  assert.equal(notifications.body.data[0].title, "Yêu cầu xem phòng đã được duyệt");
+  assert.equal(notifications.body.data[0].readAt, null);
+  assert.equal(notifications.body.data[0].note, "Mời bạn đến đúng giờ.");
+  assert.equal((await request("/notifications", "GET", undefined, 2)).body.data.length, 0);
+  assert.equal((await request("/1/read-notification", "PATCH", {}, 2)).status, 404);
+  assert.equal((await request("/1/read-notification", "PATCH", {})).status, 200);
+  assert.ok((await request("/notifications")).body.data[0].readAt);
+  assert.equal((await request("/1/status", "PATCH", { status: "confirmed" }, 3)).status, 409);
+  assert.equal((await request("/notifications")).body.data.length, 1);
+
   assert.equal((await request("/1/status", "PATCH", { status: "completed" }, 3)).status, 200);
   assert.equal((await request("/1/cancel", "PATCH", {})).status, 409);
   const second = await request("", "POST", { ...input, time: "10:00" });

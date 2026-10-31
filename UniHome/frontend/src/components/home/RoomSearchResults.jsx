@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 export default function RoomSearchResults({ result, loading, error, note, onPage }) {
   if (!result && !loading && !error && !note) return null;
   return (
-    <section className="rounded-xl border border-slate-200 bg-white p-5 lg:p-7" aria-labelledby="results-heading" aria-busy={loading}>
+    <section id="search-results" className="scroll-mt-6 rounded-xl border border-slate-200 bg-white p-5 lg:p-7" aria-labelledby="results-heading" aria-busy={loading}>
       <h2 id="results-heading" className="text-lg font-semibold">Kết quả tìm phòng</h2>
       {note && <p className="mt-2 text-sm text-slate-600" role="status">{note}</p>}
+      {note.includes("đường chim bay") && <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noreferrer" className="mt-1 inline-block text-[10px] text-slate-400">Dữ liệu © OpenStreetMap contributors · Photon</a>}
       {loading ? <p className="mt-4 text-sm text-sky-700" role="status">Đang tải các phòng phù hợp…</p> : error ? <p className="mt-4 text-sm text-red-600" role="alert">{error}</p> : result && <>
         <p className="mt-2 text-sm text-slate-500" role="status">Tìm thấy {result.pagination.total} phòng phù hợp.</p>
+        {result.pagination.total === 0 && <p className="mt-3 text-sm text-slate-600">Chưa có phòng phù hợp trong phạm vi tìm kiếm. Bạn có thể chọn trường khác hoặc điều chỉnh bộ lọc.</p>}
         <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {result.data.map((room) => <article key={room._id} className="overflow-hidden rounded-xl border border-slate-200">
             {room.hinhAnh?.[0] && <img src={room.hinhAnh[0]} alt={room.tenPhong} className="aspect-[16/10] w-full object-cover" loading="lazy" />}

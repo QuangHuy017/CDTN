@@ -1,7 +1,11 @@
 export function filtersToQuery(filters) {
   const query = new URLSearchParams();
   if (filters.khuVuc) query.set("khuVuc", filters.khuVuc);
+  if (filters.location?.trim()) query.set("location", filters.location.trim());
   if (filters.q) query.set("q", filters.q);
+  for (const key of ["lat", "lng", "radiusKm"]) {
+    if (filters[key] !== undefined) query.set(key, String(filters[key]));
+  }
   for (const [key, field] of [["price", "giaThue"], ["area", "dienTich"]]) {
     const [min, max] = (filters[key] || "").split("-");
     if (min) query.set(`${field}Min`, min);
@@ -50,9 +54,9 @@ async function readCatalog(path, signal) {
   return data;
 }
 
-export async function getFeaturedRooms({ page = 1, all = false } = {}, signal) {
-  const query = new URLSearchParams({ page: String(page), limit: "12", sort: "-createdAt" });
-  if (!all) query.set("trangThai", "con_trong");
+export async function getFeaturedRooms({ page = 1, all = false, cheapest = false } = {}, signal) {
+  const query = new URLSearchParams({ page: String(cheapest ? 1 : page), limit: cheapest ? "20" : "12", sort: cheapest ? "giaThue" : "-createdAt" });
+  if (!all && !cheapest) query.set("trangThai", "con_trong");
   const [rooms, buildings] = await Promise.all([
     readCatalog(`/api/rooms?${query}`, signal),
     readCatalog("/api/buildings?limit=100", signal),

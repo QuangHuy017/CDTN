@@ -1,3 +1,4 @@
+import { useFavoriteAccess } from "../contexts/FavoriteAccess";
 import { readSavedRooms as readFavorites } from "../services/savedRooms";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -10,18 +11,20 @@ import RoomVisitCard from "../components/rooms/RoomVisitCard";
 import BuildingMap from "../components/rooms/BuildingMap";
 
 function DetailContent({ room }) {
+  const { signedIn, requestLogin } = useFavoriteAccess();
   const [favorites, setFavorites] = useState(readFavorites);
   const [message, setMessage] = useState("");
   const building = room.building;
   const status = roomStatuses[room.trangThai] || { label: "Chưa cập nhật", color: "bg-slate-100 text-slate-600" };
   const amenities = [...new Set(room.tienIch || [])];
-  const saved = favorites.includes(room._id);
+  const saved = signedIn && favorites.includes(room._id);
   const coordinates = building?.toaDo?.coordinates;
   const hasCoordinates = Array.isArray(coordinates) && coordinates.length === 2 && coordinates.every(Number.isFinite) && Math.abs(coordinates[0]) <= 180 && Math.abs(coordinates[1]) <= 90;
   const mapQuery = hasCoordinates ? `${coordinates[1]},${coordinates[0]}` : null;
   const mapUrl = mapQuery ? `https://www.openstreetmap.org/?mlat=${coordinates[1]}&mlon=${coordinates[0]}#map=16/${coordinates[1]}/${coordinates[0]}` : null;
 
   function saveRoom() {
+    if (!signedIn) { requestLogin(); return; }
     const next = saved ? favorites.filter((id) => id !== room._id) : [...favorites, room._id];
     setFavorites(next);
     try { localStorage.setItem("unihome:saved-rooms", JSON.stringify(next)); setMessage(saved ? "Đã bỏ lưu phòng." : "Đã lưu phòng trên trình duyệt này."); }

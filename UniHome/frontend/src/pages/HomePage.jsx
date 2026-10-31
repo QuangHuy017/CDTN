@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import RoomSearchForm, { defaultRegions } from "../components/home/RoomSearchForm";
 import AiSearchPanel from "../components/home/AiSearchPanel";
 import RoomSearchResults from "../components/home/RoomSearchResults";
@@ -7,6 +8,7 @@ import FeaturedRooms from "../components/home/FeaturedRooms";
 import WhyUniHome from "../components/home/WhyUniHome";
 
 export default function HomePage() {
+  const location = useLocation();
   const [filters, setFilters] = useState({ khuVuc: "Cầu Giấy", price: "3000000-5000000", area: "20-30" });
   const [result, setResult] = useState(null);
   const [loading, setLoading] = useState(false);
@@ -15,6 +17,15 @@ export default function HomePage() {
   const request = useRef(null);
   const appliedFilters = useRef(filters);
   useEffect(() => () => request.current?.abort(), []);
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    if (!params.has("near")) return;
+    const criteria = { lat: params.get("lat"), lng: params.get("lng"), radiusKm: "5", price: "", area: "", khuVuc: "" };
+    setFilters(criteria);
+    search(criteria, 1, `Phòng trong bán kính 5 km quanh ${params.get("near")} · khoảng cách đường chim bay.`);
+    const frame = requestAnimationFrame(() => document.getElementById("search-results")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+    return () => { cancelAnimationFrame(frame); request.current?.abort(); };
+  }, [location.search, location.key]);
   useEffect(() => {
     document.title = "UniHome — Trang chủ | Tìm phòng trọ sinh viên";
     if (window.location.hash === "#ai-assistant") {
@@ -49,10 +60,11 @@ export default function HomePage() {
 
   return (
     <main id="main-content" className="mx-auto w-full max-w-[1440px] flex-1 space-y-6 px-4 py-7 sm:px-6 lg:px-10 lg:py-9" aria-label="Nội dung trang chủ">
-      <RoomSearchForm filters={filters} onChange={setFilters} onSearch={() => search(filters)} regions={defaultRegions} loading={loading} />
+      <RoomSearchForm filters={filters} onChange={setFilters} onSearch={() => search(filters, 1, filters.lat !== undefined ? note : "")} regions={defaultRegions} loading={loading} />
       <AiSearchPanel onSearch={searchPrompt} loading={loading} />
       <RoomSearchResults result={result} loading={loading} error={error} note={note} onPage={(page) => search(appliedFilters.current, page, note)} />
       <FeaturedRooms />
+      <FeaturedRooms cheapest />
       <WhyUniHome />
     </main>
   );

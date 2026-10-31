@@ -1,3 +1,4 @@
+import { FavoriteAccessContext } from "./contexts/FavoriteAccess";
 import { useEffect } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Header from "./components/layout/Header";
@@ -39,8 +40,9 @@ export default function App() {
   }
   function handleLogin(data) {
     signIn(data);
-    if (data.user.role === "admin") { navigate("/admin", { replace: true }); return; }
     const from = location.state?.from;
+    if (from === "/?page=favorites") { navigate(from, { replace: true }); return; }
+    if (data.user.role === "admin") { navigate("/admin", { replace: true }); return; }
     navigate(typeof from === "string" && from.startsWith("/") && !from.startsWith("//") && !/^\/(login|register)(?:[/?#]|$)/.test(from) ? from : "/", { replace: true });
   }
   if (location.pathname === "/admin" || location.pathname.startsWith("/admin/")) {
@@ -50,11 +52,12 @@ export default function App() {
     return <>{sessionError && <p role="alert" className="bg-red-50 p-3 text-center text-sm text-red-700">{sessionError}</p>}<AdminPage user={session.user} onLogout={signOut} /></>;
   }
   return (
+    <FavoriteAccessContext.Provider value={{ signedIn: !!session?.user && !initializing, requestLogin: () => openAuth("login") }}>
     <div className="site-shell flex min-h-screen flex-col">
       {authPage ? <AuthHeader /> : <Header user={session?.user} onLogin={() => openAuth("login")} onRegister={() => openAuth("register")} onLogout={signOut} />}
       {sessionError && <p role="alert" className="bg-red-50 p-3 text-center text-sm text-red-700">{sessionError}</p>}
       <Routes>
-        <Route path="/" element={new URLSearchParams(location.search).get("page") === "favorites" ? <FavoritesPage user={session?.user} onLogout={signOut} /> : new URLSearchParams(location.search).get("page") === "rooms" ? <MapPage /> : new URLSearchParams(location.search).get("page") === "about" ? <AboutPage /> : session?.user.role === "admin" && !location.search && !location.hash ? <Navigate to="/admin" replace /> : <HomePage />} />
+        <Route path="/" element={new URLSearchParams(location.search).get("page") === "favorites" ? (initializing ? <main className="flex-1 p-12 text-center text-sm text-slate-500" role="status">Đang kiểm tra phiên đăng nhập…</main> : session ? <FavoritesPage user={session.user} onLogout={signOut} /> : <Navigate to="/login" state={{ from: "/?page=favorites" }} replace />) : new URLSearchParams(location.search).get("page") === "rooms" ? <MapPage /> : new URLSearchParams(location.search).get("page") === "about" ? <AboutPage /> : session?.user.role === "admin" && !location.search && !location.hash ? <Navigate to="/admin" replace /> : <HomePage />} />
         <Route path="/rooms/:id" element={<RoomDetailPage />} />
         {["/account", "/appointments"].map((path) => <Route key={path} path={path} element={initializing ? <main className="flex-1 p-12 text-center text-sm text-slate-500" role="status">Đang kiểm tra phiên đăng nhập…</main> : session ? path === "/appointments" ? <ContactRequestsPage user={session.user} onLogout={signOut} /> : <AccountPage user={session.user} onUpdated={(data) => signIn({ ...data, expiresAt: session.expiresAt })} onLogout={signOut} /> : <Navigate to="/login" state={{ from: path }} replace />} />)}
         <Route path="/login" element={initializing ? <main className="flex-1 p-12 text-center text-sm text-slate-500" role="status">Đang kiểm tra phiên đăng nhập…</main> : session ? <Navigate to={session.user.role === "admin" ? "/admin" : "/"} replace /> : <LoginPage onSuccess={handleLogin} />} />
@@ -64,5 +67,6 @@ export default function App() {
       <Footer />
       {!authPage && <><div className="h-24 shrink-0" aria-hidden="true" /><AiSupportButton /></>}
     </div>
+    </FavoriteAccessContext.Provider>
   );
 }

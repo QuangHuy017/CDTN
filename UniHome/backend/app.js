@@ -131,6 +131,20 @@ function createApp({ secret, expiresIn = "1h", users = User, catalogModels, cont
   }
   app.locals.authorize = authorize;
   app.get("/api/auth/me", authenticate, (req, res) => res.json({ user: publicUser(req.user) }));
+  app.post("/api/auth/change-password", authenticate, limiter, async (req, res) => {
+    const { currentPassword, newPassword } = req.body || {};
+    if (typeof currentPassword !== "string" || !currentPassword.length || Buffer.byteLength(currentPassword) > 72 || typeof newPassword !== "string" || newPassword.length < 8 || Buffer.byteLength(newPassword) > 72 || !newPassword.trim()) {
+      return res.status(400).json({ message: "Nhập mật khẩu hiện tại và mật khẩu mới từ 8 ký tự, tối đa 72 byte." });
+    }
+    if (newPassword === currentPassword) return res.status(400).json({ message: "Mật khẩu mới phải khác mật khẩu hiện tại." });
+    const user = await users.findOneAndUpdate(
+      { _id: req.user._id, matKhau: currentPassword, trangThai: "hoat_dong" },
+      { $set: { matKhau: newPassword, dinhDangMatKhau: "plain" } },
+      { returnDocument: "after", runValidators: true }
+    );
+    if (!user) return res.status(400).json({ message: "Mật khẩu hiện tại không đúng." });
+    res.json({ message: "Đổi mật khẩu thành công. Hãy dùng mật khẩu mới cho lần đăng nhập tiếp theo." });
+  });
   app.patch("/api/auth/me", authenticate, async (req, res) => {
     const body = req.body;
     const fields = { name: "hoTen", email: "email", phone: "soDienThoai", avatar: "anhDaiDien", birthDate: "ngaySinh", gender: "gioiTinh", occupation: "truongHocNgheNghiep", roomNeeds: "nhuCauTimPhong", preferredAmenities: "tienIchUuTien" };
@@ -168,6 +182,7 @@ function createApp({ secret, expiresIn = "1h", users = User, catalogModels, cont
   app.get("/api/admin/me", authenticate, authorize("admin"), (req, res) => res.json({ user: publicUser(req.user) }));
   app.get("/api/tenant/me", authenticate, authorize("tenant"), (req, res) => res.json({ user: publicUser(req.user) }));
   app.use("/api/uploads/rooms", require("./routes/uploads")({ authenticate, authorize, directory: uploadDirectory, imageStorage }));
+  app.use("/api/places", require("./routes/places")({ buildings: catalogModels?.Building }));
   app.use("/api", require("./routes/catalog")({ authenticate, authorize, models: catalogModels }));
   app.use("/api/contact-requests", require("./routes/contactRequests")({ authenticate, authorize, models: contactModels }));
   app.use("/api/admin", require("./routes/admin")({ authenticate, authorize, models: adminModels }));

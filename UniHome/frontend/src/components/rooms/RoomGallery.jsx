@@ -28,14 +28,19 @@ export default function RoomGallery({ room }) {
   const [selected, setSelected] = useState(null);
   const images = room.hinhAnh || [];
   return (
-    <section aria-label="Hình ảnh phòng" className="rounded-2xl border border-slate-200 bg-white p-1.5">
-      <div className="grid h-[280px] grid-cols-1 gap-1.5 overflow-hidden rounded-xl sm:h-[400px] sm:grid-cols-4 lg:h-[470px]">
-        <button disabled={!images.length} onClick={() => setSelected(0)} className="relative overflow-hidden sm:col-span-2" aria-label="Mở ảnh chính của phòng"><GalleryImage src={images[0]} alt={room.tenPhong} /><span className="absolute bottom-3 left-3 rounded-full bg-slate-900/70 px-3 py-1.5 text-[10px] text-white">Hình ảnh phòng từ UniHome</span></button>
-        <button disabled={images.length < 2} onClick={() => setSelected(1)} className="hidden overflow-hidden sm:block" aria-label="Mở ảnh thứ hai"><GalleryImage src={images[1]} alt={`${room.tenPhong}, ảnh 2`} /></button>
-        <div className="hidden grid-rows-2 gap-1.5 sm:grid">
-          <button disabled={images.length < 3} onClick={() => setSelected(2)} className="min-h-0 overflow-hidden" aria-label="Mở ảnh thứ ba"><GalleryImage src={images[2]} alt={`${room.tenPhong}, ảnh 3`} /></button>
-          <button disabled={!images.length} onClick={() => setSelected(Math.min(3, images.length - 1))} className="relative min-h-0 overflow-hidden" aria-label={`Xem tất cả ${images.length} ảnh`}><GalleryImage src={images[3] || images[0]} alt={`${room.tenPhong}, ảnh bổ sung`} /><span className="absolute inset-0 flex items-center justify-center bg-slate-950/45 text-xs font-medium text-white">▧ Xem tất cả {images.length} ảnh</span></button>
-        </div>
+    <section aria-label="Hình ảnh phòng" className="overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-sm">
+      <div className={`grid h-[280px] min-h-0 gap-2 overflow-hidden rounded-xl sm:h-[360px] lg:h-[420px] ${images.length > 1 ? "sm:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]" : "grid-cols-1"}`}>
+        <button disabled={!images.length} onClick={() => setSelected(0)} className="group relative min-h-0 min-w-0 overflow-hidden bg-slate-100" aria-label="Mở ảnh chính của phòng">
+          <GalleryImage key={images[0]} src={images[0]} alt={room.tenPhong} className="transition-transform duration-500 group-hover:scale-[1.03]" />
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/60 to-transparent" />
+          <span className="absolute bottom-4 left-4 text-xs font-medium text-white">Hình ảnh thực tế phòng</span>
+        </button>
+        {images.length > 1 && <div className={`hidden min-h-0 min-w-0 gap-2 sm:grid ${images.length > 2 ? "grid-rows-[minmax(0,1fr)_minmax(0,1fr)]" : "grid-rows-[minmax(0,1fr)]"}`}>
+          {images.slice(1, 3).map((src, index) => <button key={`${src}-${index}`} onClick={() => setSelected(index + 1)} className="group relative min-h-0 min-w-0 overflow-hidden bg-slate-100" aria-label={`Mở ảnh thứ ${index + 2}`}>
+            <GalleryImage src={src} alt={`${room.tenPhong}, ảnh ${index + 2}`} className="transition-transform duration-500 group-hover:scale-[1.03]" />
+            {index === 1 && images.length > 3 && <span className="absolute right-3 bottom-3 rounded-lg bg-slate-950/65 px-3 py-2 text-xs font-medium text-white">+{images.length - 3} ảnh</span>}
+          </button>)}
+        </div>}
       </div>
       {selected !== null && <ImageViewer images={images} initial={selected} name={room.tenPhong} onClose={() => setSelected(null)} />}
     </section>

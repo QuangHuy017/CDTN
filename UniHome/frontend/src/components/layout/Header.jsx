@@ -1,7 +1,8 @@
+import NotificationMenu from "./NotificationMenu";
 import { useEffect, useRef, useState } from "react";
 import Brand from "./Brand";
 import Icon from "../common/Icon";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const navigation = [
   { key: "home", label: "Trang chủ", href: "/" },
   { key: "rooms", label: "Bản đồ phòng", href: "/?page=rooms" },
@@ -15,6 +16,47 @@ export default function Header({ user, onLogin, onLogout, onRegister }) {
   const accountMenu = useRef(null);
   const accountButton = useRef(null);
   const [accountOpen, setAccountOpen] = useState(false);
+  const [searchText, setSearchText] = useState("");
+  const [searchLoading, setSearchLoading] = useState(false);
+  const [searchError, setSearchError] = useState("");
+  const searchRequest = useRef(null);
+  useEffect(() => () => searchRequest.current?.abort(), []);
+  function editSearch(value) {
+    searchRequest.current?.abort();
+    setSearchText(value);
+    setSearchError(""); setSearchLoading(false);
+  }
+  async function lookup(path) {
+    searchRequest.current?.abort();
+    const controller = new AbortController();
+    searchRequest.current = controller;
+    setSearchLoading(true); setSearchError("");
+    try {
+      const response = await fetch(path, { signal: controller.signal });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.message || "Chưa tìm được địa điểm.");
+      return controller.signal.aborted ? null : result.data;
+    } catch (error) {
+      if (!controller.signal.aborted) setSearchError(error.message);
+      return null;
+    } finally { if (!controller.signal.aborted) setSearchLoading(false); }
+  }
+  const navigate = useNavigate();
+  function pickPlace(place) {
+    searchRequest.current?.abort();
+
+    const [lng, lat] = place.coordinates;
+    navigate(`/?${new URLSearchParams({ near: [place.name, place.address].filter(Boolean).join(" · "), lat, lng, radiusKm: "5" })}#search-results`);
+  }
+  async function searchPlaces() {
+    if (searchText.trim().length < 3) { setSearchError("Nhập ít nhất 3 ký tự.");  return; }
+
+    const data = await lookup(`/api/places/search?${new URLSearchParams({ q: searchText.trim() })}`);
+    if (data) {
+      if (data.length > 0) pickPlace(data[0]);
+      else setSearchError("Chưa tìm thấy địa điểm. Hãy nhập tên trường hoặc địa chỉ kèm quận, thành phố rồi nhấn Enter lại.");
+    }
+  }
   useEffect(() => {
     if (!accountOpen) return;
     function outside(event) {
@@ -58,12 +100,16 @@ export default function Header({ user, onLogin, onLogout, onRegister }) {
         ))}
       </nav>
       <div className="contents sm:ml-auto sm:flex sm:flex-1 sm:items-center sm:justify-end sm:gap-3 min-[1024px]:flex-none">
-        <form className="order-3 flex h-11 w-full items-center gap-2 rounded-xl border border-[#e3eaf3] bg-[#f1f5fa] px-3 focus-within:border-blue-400 focus-within:ring-3 focus-within:ring-blue-100 sm:order-none sm:w-[200px] xl:w-[250px]" action="/" method="get" role="search">
+        <form className="relative order-3 flex h-11 w-full items-center gap-2 rounded-xl border border-[#e3eaf3] bg-[#f1f5fa] px-3 focus-within:border-blue-400 focus-within:ring-3 focus-within:ring-blue-100 sm:order-none sm:w-[200px] xl:w-[250px]" role="search" onSubmit={(event) => { event.preventDefault(); searchPlaces(); }}>
           <input type="hidden" name="page" value="rooms" />
           <button className="grid place-items-center border-0 bg-transparent p-0 text-slate-400" type="submit" aria-label="Tìm phòng"><Icon name="search" className="size-4!" /></button>
-          <input className="w-full min-w-0 border-0 bg-transparent text-xs text-slate-700 outline-none placeholder:text-slate-500" ref={searchInput} name="q" aria-label="Tìm theo trường đại học hoặc khu vực" placeholder="Tìm theo trường ĐH, khu vực..." defaultValue={params.get("q") || ""} />
+          <input className="w-full min-w-0 border-0 bg-transparent text-xs text-slate-700 outline-none placeholder:text-slate-500" ref={searchInput} name="q" aria-label="Tìm phòng gần tên trường, địa chỉ hoặc khu vực" placeholder="Nhập tên trường, địa chỉ…" value={searchText} onChange={(event) => editSearch(event.target.value)} autoComplete="off" />
+          <span className="sr-only" role="status">{searchLoading ? "Đang tìm vị trí địa điểm…" : searchError}</span>
           <kbd className="shrink-0 rounded border border-slate-200 bg-white px-1 py-0.5 font-sans text-[10px] text-slate-500" aria-hidden="true">⌘K</kbd>
+
         </form>
+        {searchError && <p role="alert" className="text-xs text-red-600">{searchError}</p>}
+        {user && <NotificationMenu key={user.id} />}
         <span className="hidden h-6 w-px bg-[#e8edf6] min-[601px]:block" aria-hidden="true" />
         <div ref={accountMenu} className="relative ml-auto min-[601px]:ml-0" onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setAccountOpen(false); }}>
         <button ref={accountButton} className="flex min-h-[34px] max-w-[140px] items-center justify-center gap-1.5 border-0 bg-transparent px-0 py-1 text-[11px] leading-snug font-semibold text-[#243858] hover:text-blue-600 min-[601px]:min-h-11 min-[601px]:px-2.5 min-[601px]:text-sm" type="button" onClick={user ? () => setAccountOpen(!accountOpen) : onLogin} aria-expanded={user ? accountOpen : undefined} aria-controls={user ? "account-options" : undefined} aria-label={user ? `Tài khoản ${user.name}` : "Đăng nhập"}>

@@ -1,9 +1,11 @@
+import { useFavoriteAccess } from "../../contexts/FavoriteAccess";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../common/Icon";
 import { formatRent, roomStatuses } from "./RoomCard";
 
 export default function FavoriteRoomCard({ room, onRemove }) {
+  const { signedIn, requestLogin } = useFavoriteAccess();
   const [failed, setFailed] = useState(false);
   const status = roomStatuses[room.trangThai] || { label: "Chưa cập nhật" };
   const available = room.trangThai === "con_trong";
@@ -14,7 +16,7 @@ export default function FavoriteRoomCard({ room, onRemove }) {
         {room.hinhAnh?.[0] && !failed ? <img src={room.hinhAnh[0]} alt={room.tenPhong} onError={() => setFailed(true)} loading="lazy" className="size-full object-cover transition-transform duration-300 hover:scale-105" /> : <span className="flex size-full flex-col items-center justify-center gap-2 text-xs text-slate-400"><Icon name="building" className="size-10!" />Chưa có hình ảnh</span>}
       </Link>
       <span className={`absolute top-3 left-3 rounded border bg-white/95 px-2 py-1 text-[10px] font-medium ${available ? "border-emerald-200 text-emerald-700" : "border-slate-200 text-slate-600"}`}>● {status.label}</span>
-      <button type="button" onClick={onRemove} aria-label={`Bỏ lưu ${room.tenPhong}`} aria-pressed="true" className="absolute top-3 right-3 grid size-8 place-items-center rounded-full bg-white/95 text-red-600 shadow-sm transition hover:scale-110 hover:bg-red-50"><Icon name="heart" className="size-[17px]! fill-red-600!" /></button>
+      <button type="button" onClick={signedIn ? onRemove : requestLogin} aria-label={`${signedIn ? "Bỏ lưu" : "Lưu"} ${room.tenPhong}`} aria-pressed={signedIn} className={`absolute top-3 right-3 grid size-8 place-items-center rounded-full bg-white/95 shadow-sm transition hover:scale-110 ${signedIn ? "text-red-600 hover:bg-red-50" : "text-slate-600 hover:bg-slate-50"}`}><Icon name="heart" className={`size-[17px]! ${signedIn ? "fill-red-600!" : ""}`} /></button>
       <span className="absolute bottom-2 left-2 rounded bg-slate-900/65 px-2 py-1 text-[10px] text-white">Mã phòng: {room.maPhong}</span>
     </div>
     <div className="flex flex-1 flex-col p-3.5 sm:p-4">

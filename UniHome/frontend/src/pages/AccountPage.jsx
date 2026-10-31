@@ -1,5 +1,6 @@
+import ChangePasswordForm from "../components/auth/ChangePasswordForm";
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Icon from "../components/common/Icon";
 import { updateProfile } from "../services/authService";
 import { readSavedRooms } from "../services/savedRooms";
@@ -24,6 +25,8 @@ async function resizeAvatar(file) {
 }
 
 export default function AccountPage({ user, onUpdated, onLogout, appointments = false }) {
+  const location = useLocation();
+  const passwordSection = !appointments && new URLSearchParams(location.search).get("section") === "password";
   const [form, setForm] = useState(() => profileOf(user));
   const [saving, setSaving] = useState(false);
   const [readingImage, setReadingImage] = useState(false);
@@ -31,7 +34,7 @@ export default function AccountPage({ user, onUpdated, onLogout, appointments = 
   const [error, setError] = useState("");
   const [showAmenities, setShowAmenities] = useState(false);
   const imageInput = useRef(null); const imageGeneration = useRef(0);
-  const title = appointments ? "Yêu cầu liên hệ đã gửi" : "Thông tin tài khoản";
+  const title = passwordSection ? "Đổi mật khẩu" : appointments ? "Yêu cầu liên hệ đã gửi" : "Thông tin tài khoản";
   useEffect(() => { document.title = `${title} | UniHome`; }, [title]);
   useEffect(() => { setForm(profileOf(user)); setMessage(""); setError(""); }, [user.id]);
   useEffect(() => () => { imageGeneration.current += 1; }, []);
@@ -62,7 +65,8 @@ export default function AccountPage({ user, onUpdated, onLogout, appointments = 
           <div className="mt-6 grid grid-cols-2 gap-2 border-t border-slate-100 pt-4"><div className="rounded-lg bg-[#f0f4ff] p-2.5"><p className="text-[11px] text-slate-500">Vai trò</p><p className="mt-1 text-xs font-semibold text-sky-700">{user.role === "admin" ? "Admin" : "Người tìm phòng"}</p></div><div className="rounded-lg bg-[#f0f4ff] p-2.5"><p className="text-[11px] text-slate-500">Ngày tham gia</p><p className="mt-1 text-xs font-semibold text-[#15273e]">{joined}</p></div></div>
         </section>
         <nav aria-label="Tài khoản cá nhân" className="rounded-xl border border-[#e6ebf3] bg-white p-2 shadow-sm">
-          <Link to="/account" aria-current={!appointments ? "page" : undefined} className={`${navClass} ${!appointments ? "bg-[#cfe7ff] font-semibold text-[#153f5c]" : "text-slate-600 hover:bg-slate-50"}`}><Icon name="user" className="size-4! text-sky-700" />Thông tin cá nhân<Icon name="arrow" className="ml-auto size-4! text-sky-700" /></Link>
+          <Link to="/account" aria-current={!appointments && !passwordSection ? "page" : undefined} className={`${navClass} ${!appointments && !passwordSection ? "bg-[#cfe7ff] font-semibold text-[#153f5c]" : "text-slate-600 hover:bg-slate-50"}`}><Icon name="user" className="size-4! text-sky-700" />Thông tin cá nhân<Icon name="arrow" className="ml-auto size-4! text-sky-700" /></Link>
+          <Link to="/account?section=password" aria-current={passwordSection ? "page" : undefined} className={`${navClass} ${passwordSection ? "bg-[#cfe7ff] font-semibold text-[#153f5c]" : "text-slate-600 hover:bg-slate-50"}`}><Icon name="shield" className="size-4! text-sky-700" />Đổi mật khẩu{passwordSection && <Icon name="arrow" className="ml-auto size-4! text-sky-700" />}</Link>
           <Link to="/?page=favorites" className={`${navClass} text-slate-600 hover:bg-slate-50`}><Icon name="heart" className="size-4!" />Phòng yêu thích<span className="ml-auto rounded-full bg-blue-100 px-2 py-0.5 text-[11px] font-semibold text-blue-900">{readSavedRooms().length}</span></Link>
           <Link to="/appointments" aria-current={appointments ? "page" : undefined} className={`${navClass} ${appointments ? "bg-[#cfe7ff] font-semibold text-[#153f5c]" : "text-slate-600 hover:bg-slate-50"}`}><Icon name="document" className="size-4!" />Yêu cầu liên hệ đã gửi</Link>
           <div className="my-2 border-t border-slate-100" /><button type="button" onClick={onLogout} className={`${navClass} text-red-600 hover:bg-red-50`}><Icon name="login" className="size-4!" />Đăng xuất</button>
@@ -70,8 +74,8 @@ export default function AccountPage({ user, onUpdated, onLogout, appointments = 
         <Link to="/#ai-assistant" className="flex items-center gap-3 rounded-xl border border-[#dfe7f8] bg-[#eef3ff] p-4"><span className="grid size-10 shrink-0 place-items-center rounded-lg bg-white text-sky-600"><Icon name="bot" className="size-6!" /></span><span><span className="block text-xs font-semibold text-[#172b44]">Cần trợ giúp tìm phòng?</span><span className="mt-1 block text-[11px] text-slate-500">Khám phá phòng phù hợp cùng UniHome</span></span></Link>
       </aside>
       <section className="min-w-0 rounded-xl border border-[#e6ebf3] bg-white p-5 shadow-sm sm:p-7">
-        <div className="border-b border-[#e9edf4] pb-5"><h1 className="text-[25px] font-bold tracking-tight text-[#14253b]">{title}</h1><p className="mt-1.5 text-[13px] leading-6 text-slate-600">{appointments ? "Theo dõi hướng dẫn lên lịch và liên hệ cơ sở." : "Quản lý thông tin hồ sơ của bạn để thuận tiện khi liên hệ xem phòng trọ."}</p></div>
-        {appointments ? <div className="py-6 text-sm leading-7 text-slate-600"><p>Hiện tại, lịch xem phòng được tải về dưới dạng tệp lịch trên trang chi tiết phòng. Website chưa lưu lịch theo tài khoản nên chưa thể hiển thị, sửa hoặc hủy lịch tại đây.</p><p className="mt-3">Bạn có thể quản lý lịch đã tải trong ứng dụng lịch của mình và liên hệ cơ sở để xác nhận buổi xem phòng.</p><Link to="/" className="mt-5 inline-block rounded-lg bg-sky-600 px-4 py-2.5 font-semibold text-white hover:bg-sky-700">Tìm phòng để lên lịch</Link></div> : <form onSubmit={save} className="mt-5 space-y-5">
+        <div className="border-b border-[#e9edf4] pb-5"><h1 className="text-[25px] font-bold tracking-tight text-[#14253b]">{title}</h1><p className="mt-1.5 text-[13px] leading-6 text-slate-600">{passwordSection ? "Cập nhật mật khẩu đăng nhập của bạn." : appointments ? "Theo dõi hướng dẫn lên lịch và liên hệ cơ sở." : "Quản lý thông tin hồ sơ của bạn để thuận tiện khi liên hệ xem phòng trọ."}</p></div>
+        {passwordSection ? <ChangePasswordForm key={user.id} /> : appointments ? <div className="py-6 text-sm leading-7 text-slate-600"><p>Hiện tại, lịch xem phòng được tải về dưới dạng tệp lịch trên trang chi tiết phòng. Website chưa lưu lịch theo tài khoản nên chưa thể hiển thị, sửa hoặc hủy lịch tại đây.</p><p className="mt-3">Bạn có thể quản lý lịch đã tải trong ứng dụng lịch của mình và liên hệ cơ sở để xác nhận buổi xem phòng.</p><Link to="/" className="mt-5 inline-block rounded-lg bg-sky-600 px-4 py-2.5 font-semibold text-white hover:bg-sky-700">Tìm phòng để lên lịch</Link></div> : <form onSubmit={save} className="mt-5 space-y-5">
           <fieldset disabled={saving} className="space-y-5 disabled:opacity-70">
             <div className="flex flex-wrap items-center gap-4 rounded-xl border border-[#dfe7fa] bg-[#f0f4ff] p-4"><Avatar image={form.avatar} name={form.name} /><div className="min-w-0 flex-1"><div className="flex flex-wrap items-center gap-3"><input ref={imageInput} type="file" accept="image/jpeg,image/png" onChange={selectAvatar} className="sr-only" aria-label="Chọn ảnh đại diện" /><button disabled={readingImage} type="button" onClick={() => imageInput.current?.click()} className="flex items-center gap-2 rounded-lg border border-[#dfe7f2] bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:border-sky-400"><Icon name="camera" className="size-4! text-sky-600" />{readingImage ? "Đang xử lý ảnh…" : "Thay đổi ảnh đại diện"}</button><button disabled={!form.avatar || readingImage} type="button" onClick={() => change("avatar", "")} className="text-xs text-slate-600 hover:text-red-600 disabled:opacity-40">Xóa ảnh</button></div><p className="mt-2 text-[11px] leading-5 text-slate-500">Hỗ trợ JPG, PNG tối đa 5MB. Ảnh đại diện rõ mặt giúp dễ nhận diện khi liên hệ.</p></div></div>
             <label className="block text-[11px] font-semibold text-[#394c66]">HỌ VÀ TÊN <span className="text-red-500">*</span><input required maxLength={100} autoComplete="name" className={inputClass} value={form.name} onChange={(event) => change("name", event.target.value)} /></label>

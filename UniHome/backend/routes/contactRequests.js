@@ -8,6 +8,10 @@ module.exports = function contactRequests({ authenticate, authorize, models = { 
   const router = express.Router();
   const Requests = models.ContactRequest;
   router.use(authenticate);
+  router.get("/notifications", async (req, res) => {
+    const rows = await Requests.find({ userId: req.user._id, "approvalNotification.createdAt": { $exists: true } }).sort({ "approvalNotification.createdAt": -1, _id: -1 }).lean();
+    res.json({ data: rows.map((item) => ({ id: item._id, title: "Yêu cầu xem phòng đã được duyệt", roomName: item.room?.name || item.room?.code || "Phòng đã đặt lịch", scheduledAt: item.scheduledAt, createdAt: item.approvalNotification.createdAt, readAt: item.approvalNotification.readAt || null, note: item.approvalNotification.note || "" })) });
+  });
   router.get("/", async (req, res) => {
     const data = await Requests.find({ userId: req.user._id }).sort({ createdAt: -1, _id: -1 }).lean();
     res.json({ data });
@@ -41,11 +45,16 @@ module.exports = function contactRequests({ authenticate, authorize, models = { 
     if (!data) return res.status(409).json({ message: "Không thể hủy: yêu cầu không tồn tại, đã hủy hoặc đã hoàn thành." });
     res.json({ data });
   });
+  router.patch("/:id/read-notification", async (req, res) => {
+    const data = await Requests.findOneAndUpdate({ _id: Number(req.params.id), userId: req.user._id, "approvalNotification.createdAt": { $exists: true } }, { $set: { "approvalNotification.readAt": new Date() } }, { returnDocument: "after" });
+    if (!data) return res.status(404).json({ message: "Không tìm thấy thông báo." });
+    res.json({ message: "Đã đánh dấu đã đọc." });
+  });
   router.patch("/:id/status", authorize("admin"), async (req, res) => {
     const body = req.body;
     if (!body || Object.keys(body).some((key) => !["status", "managerNote"].includes(key)) || !["confirmed", "completed", "cancelled"].includes(body.status) || (body.managerNote !== undefined && (typeof body.managerNote !== "string" || body.managerNote.length > 1000))) return res.status(400).json({ message: "Trạng thái hoặc ghi chú không hợp lệ." });
     const prior = body.status === "completed" ? ["confirmed"] : body.status === "confirmed" ? ["pending"] : ["pending", "confirmed"];
-    const data = await Requests.findOneAndUpdate({ _id: Number(req.params.id), status: { $in: prior } }, { $set: { status: body.status, ...(body.managerNote !== undefined ? { managerNote: body.managerNote.trim() } : {}) } }, { returnDocument: "after", runValidators: true });
+    const data = await Requests.findOneAndUpdate({ _id: Number(req.params.id), status: { $in: prior } }, { $set: { status: body.status, ...(body.status === "confirmed" ? { approvalNotification: { createdAt: new Date(), readAt: null, note: body.managerNote?.trim() || "" } } : {}), ...(body.managerNote !== undefined ? { managerNote: body.managerNote.trim() } : {}) } }, { returnDocument: "after", runValidators: true });
     if (!data) return res.status(409).json({ message: "Không thể chuyển trạng thái yêu cầu này." });
     res.json({ data });
   });
