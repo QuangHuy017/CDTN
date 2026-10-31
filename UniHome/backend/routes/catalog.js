@@ -2,6 +2,7 @@ const express = require("express");
 const Building = require("../models/Building");
 const Room = require("../models/Room");
 const Amenity = require("../models/Amenity");
+const { applyAvailability } = require("../room-availability");
 
 const fail = (status, message) => { throw Object.assign(new Error(message), { status }); };
 const literal = (value) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -30,7 +31,7 @@ function pagination(query, fields) {
 }
 const fields = {
   buildings: ["maCoSo", "tenCoSo", "diaChi", "khuVuc", "soTang", "soPhongMoiTang", "tongSoPhong", "toaDo", "giaDien", "giaNuoc", "donViNuoc", "tienCocThang", "tienIchChung", "noiQuy"],
-  rooms: ["maPhong", "maCoSo", "tenPhong", "soPhong", "giaThue", "dienTich", "loaiPhong", "tang", "soNguoiToiDa", "moTa", "tienIch", "hinhAnh", "trangThai", "giaDien", "giaNuoc", "donViNuoc"],
+  rooms: ["maPhong", "maCoSo", "tenPhong", "soPhong", "giaThue", "dienTich", "loaiPhong", "tang", "soNguoiToiDa", "moTa", "tienIch", "hinhAnh", "trangThai", "ngayDuKienTrong", "giaDien", "giaNuoc", "donViNuoc"],
   amenities: ["maTienIch", "tenTienIch", "moTa"]
 };
 const required = {
@@ -50,6 +51,8 @@ function input(body, resource, creating) {
     } else if (["tienIch", "tienIchChung", "hinhAnh", "noiQuy"].includes(key)) {
       if (!Array.isArray(value) || value.length > 100) fail(400, `${key} phải là mảng tối đa 100 phần tử.`);
       data[key] = [...new Set(value.map((v) => string(v, key)))];
+    } else if (key === "ngayDuKienTrong") {
+      if (value !== null && typeof value !== "string") fail(400, "Ngày dự kiến trống không hợp lệ.");
     } else if (key === "toaDo") {
       if (!value || typeof value !== "object" || Object.keys(value).some((k) => !["type", "coordinates"].includes(k)) || (value.type !== undefined && value.type !== "Point") || !Array.isArray(value.coordinates) || value.coordinates.length !== 2) fail(400, "toaDo cần tọa độ [kinh độ, vĩ độ].");
       const [lng, lat] = value.coordinates;
@@ -130,7 +133,11 @@ module.exports = function catalog({ authenticate, authorize, models = { Building
           if (min !== undefined || max !== undefined) filter[field] = { ...(min !== undefined ? { $gte: min } : {}), ...(max !== undefined ? { $lte: max } : {}) };
         }
         for (const field of ["loaiPhong", "trangThai"]) if (q[field] !== undefined) filter[field] = string(q[field], field);
-        if (filter.trangThai && !["con_trong", "da_thue", "sap_trong"].includes(filter.trangThai)) fail(400, "trangThai không hợp lệ.");
+        if (filter.trangThai) {
+          const statuses = [...new Set(filter.trangThai.split(","))];
+          if (statuses.some((status) => !["con_trong", "da_thue", "sap_trong"].includes(status))) fail(400, "trangThai không hợp lệ.");
+          filter.trangThai = statuses.length === 1 ? statuses[0] : { $in: statuses };
+        }
       }
       if (q.tienIch !== undefined) {
         const amenities = [...new Set(string(q.tienIch, "tienIch").split(",").map((a) => string(a, "tienIch")))];
@@ -159,6 +166,7 @@ module.exports = function catalog({ authenticate, authorize, models = { Building
     }
     router.post(`/${resource}`, ...guards, async (req, res) => {
       const data = input(req.body, resource, true);
+      if (resource === "rooms") applyAvailability(data);
       await checkBuilding(data);
       const doc = await model.create(data);
       res.location(`/api/${resource}/${doc._id}`).status(201).json({ data: doc });
@@ -167,6 +175,7 @@ module.exports = function catalog({ authenticate, authorize, models = { Building
       const data = input(req.body, resource, req.method === "PUT");
       const doc = await model.findById(req.params[`${resource}Id`]);
       if (!doc) fail(404, "Không tìm thấy dữ liệu.");
+      if (resource === "rooms") applyAvailability(data, doc);
       if (data[code] !== undefined && data[code] !== doc[code]) fail(400, "Không được thay đổi mã định danh.");
       if (resource === "amenities" && data.tenTienIch !== undefined && data.tenTienIch !== doc.tenTienIch && await inUse(resource, doc)) fail(409, "Tiện ích đang được sử dụng; không thể đổi tên.");
       await checkBuilding(data);

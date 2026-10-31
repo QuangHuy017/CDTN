@@ -48,7 +48,7 @@ export default function FeaturedRooms({ cheapest = false }) {
           <div>
             <span className={`mb-2 inline-flex rounded-full px-2.5 py-1 text-[10px] font-bold tracking-wider uppercase ${cheapest ? "bg-emerald-100 text-emerald-800" : "bg-sky-100 text-sky-800"}`}>{cheapest ? "Ngân sách tiết kiệm" : "Khám phá UniHome"}</span>
             <h2 id={headingId} className="text-xl font-bold tracking-tight text-[#102c48] sm:text-2xl lg:text-[28px]">{cheapest ? "Phòng giá rẻ" : all ? "Tất cả phòng cho thuê" : "Phòng cho thuê nổi bật"}</h2>
-            {!cheapest && <p className="mt-2 max-w-xl text-xs leading-6 text-slate-600 sm:text-sm">{all ? "Khám phá các phòng và tình trạng cho thuê hiện tại." : "Khám phá các phòng còn trống tại những cơ sở UniHome ở Hà Nội."}</p>}
+            {!cheapest && <p className="mt-2 max-w-xl text-xs leading-6 text-slate-600 sm:text-sm">{all ? "Khám phá các phòng và tình trạng cho thuê hiện tại." : "Khám phá các phòng còn trống và sắp trống tại những cơ sở UniHome ở Hà Nội."}</p>}
           </div>
         </div>
         {!cheapest && <button type="button" onClick={() => { setAll(!all); setPage(1); }} className="shrink-0 rounded-xl border border-sky-200 bg-white px-4 py-2.5 text-xs font-semibold text-sky-800 shadow-sm transition hover:border-sky-400 hover:bg-sky-50">{all ? "Thu gọn" : "Xem tất cả →"}</button>}
@@ -60,7 +60,7 @@ export default function FeaturedRooms({ cheapest = false }) {
           {Array.from({ length: cheapPages }, (_, index) => index + 1).map((number) => <button key={number} type="button" aria-label={`Trang ${number}`} aria-current={cheapPage === number ? "page" : undefined} onClick={() => { setCheapPage(number); section.current?.scrollIntoView({ behavior: "smooth", block: "start" }); }} className={`grid size-10 place-items-center rounded-lg border text-sm font-medium ${cheapPage === number ? "border-sky-700 bg-sky-700 text-white" : "border-slate-200 bg-white text-slate-600 hover:bg-sky-50"}`}>{number}</button>)}
         </nav>}
         {!cheapest && all && result.pagination.totalPages > 1 && <div className="mt-6 flex items-center justify-center gap-4 text-sm"><button type="button" disabled={page <= 1} onClick={() => changePage(page - 1)} className="rounded-lg border border-slate-200 bg-white px-4 py-2 disabled:opacity-40">Trang trước</button><span>Trang {page}/{result.pagination.totalPages}</span><button type="button" disabled={page >= result.pagination.totalPages} onClick={() => changePage(page + 1)} className="rounded-lg border border-slate-200 bg-white px-4 py-2 disabled:opacity-40">Trang sau</button></div>}
-      </> : <p className="rounded-xl border border-slate-200 bg-white p-8 text-center text-sm text-slate-500">{cheapest || all ? "Chưa có phòng trong hệ thống." : "Hiện chưa có phòng còn trống. Bạn có thể chọn Xem tất cả để xem các phòng khác."}</p>}
+      </> : <p className="rounded-xl border border-slate-200 bg-white p-8 text-center text-sm text-slate-500">{cheapest || all ? "Chưa có phòng trong hệ thống." : "Hiện chưa có phòng còn trống hoặc sắp trống. Bạn có thể chọn Xem tất cả để xem các phòng khác."}</p>}
 
     </section>
   );

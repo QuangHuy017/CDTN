@@ -14,6 +14,7 @@ const schema = new mongoose.Schema({
   tienIch: [String],
   hinhAnh: [String],
   trangThai: { type: String, enum: ["con_trong", "da_thue", "sap_trong"], default: "con_trong" },
+  ngayDuKienTrong: { type: String, default: null },
   giaDien: { type: Number, min: 0 },
   giaNuoc: { type: Number, min: 0 },
   donViNuoc: String,

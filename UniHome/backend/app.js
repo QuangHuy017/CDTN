@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const { rateLimit } = require("express-rate-limit");
 const User = require("./models/User");
 
-function createApp({ secret, expiresIn = "1h", users = User, catalogModels, contactModels, adminModels, uploadDirectory, imageStorage } = {}) {
+function createApp({ secret, expiresIn = "1h", users = User, catalogModels, contactModels, adminModels, uploadDirectory, imageStorage, interestModels } = {}) {
   if (typeof secret !== "string" || Buffer.byteLength(secret) < 32) {
     throw new Error("JWT_SECRET phải có ít nhất 32 byte.");
   }
@@ -184,6 +184,7 @@ function createApp({ secret, expiresIn = "1h", users = User, catalogModels, cont
   app.use("/api/uploads/rooms", require("./routes/uploads")({ authenticate, authorize, directory: uploadDirectory, imageStorage }));
   app.use("/api/places", require("./routes/places")({ buildings: catalogModels?.Building }));
   app.use("/api", require("./routes/catalog")({ authenticate, authorize, models: catalogModels }));
+  app.use("/api/rooms/:roomId/interest", require("./routes/roomInterests")({ authenticate, authorize, users, models: interestModels }));
   app.use("/api/contact-requests", require("./routes/contactRequests")({ authenticate, authorize, models: contactModels }));
   app.use("/api/admin", require("./routes/admin")({ authenticate, authorize, models: adminModels }));
   app.use((req, res) => res.status(404).json({ message: "Không tìm thấy API." }));

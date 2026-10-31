@@ -9,6 +9,12 @@ const schema = new mongoose.Schema({
   note: { type: String, default: "", maxlength: 500 },
   status: { type: String, enum: ["pending", "confirmed", "completed", "cancelled"], default: "pending" },
   managerNote: { type: String, default: "", maxlength: 1000 },
+  visitResult: {
+    attendance: { type: String, enum: ["attended", "no_show"] },
+    outcome: { type: String, enum: ["wants_to_rent", "considering", "not_interested", "undecided"] },
+    recordedAt: Date,
+    recordedBy: { type: Number, ref: "User" }
+  },
   approvalNotification: { createdAt: Date, readAt: { type: Date, default: null }, note: String }
 }, { timestamps: true, collection: "contact_requests" });
 schema.index({ userId: 1, createdAt: -1 });

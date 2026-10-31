@@ -2,6 +2,7 @@ import { useFavoriteAccess } from "../../contexts/FavoriteAccess";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import Icon from "../common/Icon";
+import RoomInterest from "./RoomInterest";
 
 export const formatRent = (value) => new Intl.NumberFormat("vi-VN").format(value);
 export const roomStatuses = {
@@ -32,6 +33,7 @@ export default function RoomCard({ room, saved: storedSaved, onSave }) {
         <ul className="mt-3 flex min-h-11 flex-wrap content-start gap-1.5" aria-label="Tiện ích phòng">
           {(room.tienIch || []).slice(0, 3).map((amenity) => <li key={amenity} className="rounded border border-[#e0e7f3] bg-[#eff4ff] px-1.5 py-0.5 text-[10px] text-[#4b586b]">{amenity}</li>)}
         </ul>
+        <RoomInterest room={room} compact />
       </div>
       <div className="flex items-center justify-between gap-2 border-t border-[#edf0f5] px-4 py-3">
         <div><p className="text-lg leading-tight font-bold tracking-tight text-[#0072ac]">{formatRent(room.giaThue)} <span className="text-[10px] font-normal tracking-normal text-slate-600">đ/tháng</span></p><p className="mt-1 flex items-center gap-1 text-[10px] text-[#42516a]"><Icon name="area" className="size-3!" />{room.dienTich} m²{room.tang != null ? ` · Tầng ${room.tang}` : ""}</p></div>

@@ -56,7 +56,7 @@ async function readCatalog(path, signal) {
 
 export async function getFeaturedRooms({ page = 1, all = false, cheapest = false } = {}, signal) {
   const query = new URLSearchParams({ page: String(cheapest ? 1 : page), limit: cheapest ? "20" : "12", sort: cheapest ? "giaThue" : "-createdAt" });
-  if (!all && !cheapest) query.set("trangThai", "con_trong");
+  if (!all && !cheapest) query.set("trangThai", "con_trong,sap_trong");
   const [rooms, buildings] = await Promise.all([
     readCatalog(`/api/rooms?${query}`, signal),
     readCatalog("/api/buildings?limit=100", signal),

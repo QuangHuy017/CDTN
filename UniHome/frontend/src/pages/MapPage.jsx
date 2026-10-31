@@ -47,7 +47,7 @@ export default function MapPage() {
   }, [retry]);
   useEffect(() => {
     const controller = new AbortController(); setLoading(true); setError(""); setResult(null);
-    const query = new URLSearchParams({ limit: "12", page: String(page), trangThai: "con_trong", sort: "giaThue" });
+    const query = new URLSearchParams({ limit: "12", page: String(page), trangThai: "con_trong,sap_trong", sort: "giaThue" });
     if (selectedCode) query.set("maCoSo", selectedCode);
     if (criteria) for (const key of ["lat", "lng", "radiusKm"]) query.set(key, criteria[key]);
     adminRequest(`/rooms?${query}`, { signal: controller.signal }).then(setResult).catch((err) => { if (!controller.signal.aborted) setError(err.message); }).finally(() => { if (!controller.signal.aborted) setLoading(false); });
@@ -66,7 +66,7 @@ export default function MapPage() {
         <div className="border-b border-slate-100 p-5">
           <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.18em] text-sky-600">UniHome · Cơ sở cho thuê</p>
           <h1 className="text-xl font-bold text-slate-800">Khám phá cơ sở UniHome</h1>
-          <p className="mt-2 text-xs leading-5 text-slate-500">Chọn tòa nhà để xem vị trí và phòng còn trống.</p>
+          <p className="mt-2 text-xs leading-5 text-slate-500">Chọn tòa nhà để xem vị trí và phòng còn trống hoặc sắp trống.</p>
           <input aria-label="Tìm cơ sở UniHome" placeholder="Tìm tên cơ sở, địa chỉ…" value={buildingSearch} onChange={(event) => setBuildingSearch(event.target.value)} className="mt-4 w-full rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 text-xs outline-none focus:border-sky-500" />
           <div className="mt-3 flex items-center justify-between text-xs"><span className="text-slate-500">{buildings.length} cơ sở UniHome</span><button type="button" onClick={() => { setSelectedCode(""); setCriteria(null); setPage(1); }} className="font-medium text-sky-700 hover:underline">Xem tất cả</button></div>
         </div>
@@ -88,7 +88,7 @@ export default function MapPage() {
       </div>
     </section>
     <section className="mx-auto max-w-[1440px] space-y-5 px-4 py-6 lg:px-8" aria-label="Phòng tại cơ sở">
-    <h2 className="text-xl font-bold">{selected ? `Phòng tại ${selected.tenCoSo}` : "Phòng còn trống tại UniHome"}</h2>
+    <h2 className="text-xl font-bold">{selected ? `Phòng tại ${selected.tenCoSo}` : "Phòng còn trống và sắp trống tại UniHome"}</h2>
     <details className="rounded-xl border border-slate-200 bg-white p-4"><summary className="cursor-pointer text-sm font-medium text-sky-800">Tìm phòng theo bán kính quanh trường học / nơi làm việc</summary><p className="mt-3 text-xs text-slate-500">Bấm một điểm trên bản đồ hoặc nhập tọa độ bên dưới. Khoảng cách tính theo đường chim bay.</p>
     <form onSubmit={search} className="grid items-end gap-3 rounded-xl border border-slate-200 bg-white p-4 sm:grid-cols-2 lg:grid-cols-5">
       <label className="text-xs">Tên điểm (tùy chọn)<input className={inputClass} value={form.label} placeholder="Trường học / nơi làm việc" onChange={(e) => setForm({ ...form, label: e.target.value })} /></label>
@@ -99,7 +99,7 @@ export default function MapPage() {
     </form>
     </details>
     {(error || buildingsError) && <div role="alert" className="rounded-lg bg-red-50 p-3 text-sm text-red-700">{error || buildingsError} <button type="button" className="underline" onClick={() => { setBuildingsError(""); setRetry(retry + 1); }}>Thử lại</button></div>}
-    <div className="flex flex-wrap items-center justify-between gap-3"><p role="status" className="text-sm text-slate-600">{loading ? "Đang tìm phòng…" : `${result?.pagination.total ?? 0} phòng còn trống${criteria ? ` trong ${criteria.radiusKm} km quanh ${criteria.label || "điểm đã chọn"}` : ""}`}. Khoảng cách tính theo đường chim bay.</p>{criteria && <button type="button" onClick={() => { setCriteria(null); setPage(1); }} className="text-sm text-sky-700 underline">Xóa bộ lọc bán kính</button>}</div>
+    <div className="flex flex-wrap items-center justify-between gap-3"><p role="status" className="text-sm text-slate-600">{loading ? "Đang tìm phòng…" : `${result?.pagination.total ?? 0} phòng còn trống hoặc sắp trống${criteria ? ` trong ${criteria.radiusKm} km quanh ${criteria.label || "điểm đã chọn"}` : ""}`}. Khoảng cách tính theo đường chim bay.</p>{criteria && <button type="button" onClick={() => { setCriteria(null); setPage(1); }} className="text-sm text-sky-700 underline">Xóa bộ lọc bán kính</button>}</div>
     <p className="text-xs text-slate-500">Bản đồ hiển thị tất cả cơ sở UniHome có tọa độ đã lưu. {buildings.filter((building) => !buildingPosition(building)).length > 0 && "Một số tòa nhà chưa có tọa độ nên chưa hiển thị trên bản đồ."}</p>
     {!loading && result?.pagination.total === 0 && <p className="rounded-xl bg-slate-50 p-5 text-sm">Không tìm thấy phòng. Hãy tăng bán kính hoặc chọn điểm khác.</p>}
     {saveMessage && <p role="status" className="text-xs text-sky-700">{saveMessage}</p>}

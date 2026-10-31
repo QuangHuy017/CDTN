@@ -52,9 +52,15 @@ module.exports = function contactRequests({ authenticate, authorize, models = { 
   });
   router.patch("/:id/status", authorize("admin"), async (req, res) => {
     const body = req.body;
-    if (!body || Object.keys(body).some((key) => !["status", "managerNote"].includes(key)) || !["confirmed", "completed", "cancelled"].includes(body.status) || (body.managerNote !== undefined && (typeof body.managerNote !== "string" || body.managerNote.length > 1000))) return res.status(400).json({ message: "Trạng thái hoặc ghi chú không hợp lệ." });
+    if (!body || Object.keys(body).some((key) => !["status", "managerNote", "visitResult"].includes(key)) || !["confirmed", "completed", "cancelled"].includes(body.status) || (body.managerNote !== undefined && (typeof body.managerNote !== "string" || body.managerNote.length > 1000))) return res.status(400).json({ message: "Trạng thái hoặc ghi chú không hợp lệ." });
+    let visitResult;
+    if (body.visitResult !== undefined) {
+      const result = body.visitResult;
+      if (body.status !== "completed" || !result || typeof result !== "object" || Array.isArray(result) || Object.keys(result).some((key) => !["attendance", "outcome"].includes(key)) || !["attended", "no_show"].includes(result.attendance) || (result.attendance === "attended" && !["wants_to_rent", "considering", "not_interested", "undecided"].includes(result.outcome)) || (result.attendance === "no_show" && result.outcome !== undefined)) return res.status(400).json({ message: "Vui lòng chọn khách có đến xem và kết quả phù hợp." });
+      visitResult = { attendance: result.attendance, ...(result.attendance === "attended" ? { outcome: result.outcome } : {}), recordedAt: new Date(), recordedBy: req.user._id };
+    }
     const prior = body.status === "completed" ? ["confirmed"] : body.status === "confirmed" ? ["pending"] : ["pending", "confirmed"];
-    const data = await Requests.findOneAndUpdate({ _id: Number(req.params.id), status: { $in: prior } }, { $set: { status: body.status, ...(body.status === "confirmed" ? { approvalNotification: { createdAt: new Date(), readAt: null, note: body.managerNote?.trim() || "" } } : {}), ...(body.managerNote !== undefined ? { managerNote: body.managerNote.trim() } : {}) } }, { returnDocument: "after", runValidators: true });
+    const data = await Requests.findOneAndUpdate({ _id: Number(req.params.id), status: { $in: prior } }, { $set: { status: body.status, ...(visitResult ? { visitResult } : {}), ...(body.status === "confirmed" ? { approvalNotification: { createdAt: new Date(), readAt: null, note: body.managerNote?.trim() || "" } } : {}), ...(body.managerNote !== undefined ? { managerNote: body.managerNote.trim() } : {}) } }, { returnDocument: "after", runValidators: true });
     if (!data) return res.status(409).json({ message: "Không thể chuyển trạng thái yêu cầu này." });
     res.json({ data });
   });

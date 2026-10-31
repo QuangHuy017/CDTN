@@ -9,6 +9,7 @@ import RoomGallery from "../components/rooms/RoomGallery";
 import RoomCosts from "../components/rooms/RoomCosts";
 import RoomVisitCard from "../components/rooms/RoomVisitCard";
 import BuildingMap from "../components/rooms/BuildingMap";
+import RoomInterest from "../components/rooms/RoomInterest";
 
 function DetailContent({ room }) {
   const { signedIn, requestLogin } = useFavoriteAccess();
@@ -51,6 +52,7 @@ function DetailContent({ room }) {
         <div className="flex shrink-0 gap-2"><button onClick={shareRoom} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-xs text-slate-600 hover:bg-blue-50">Chia sẻ ↗</button><button onClick={saveRoom} aria-pressed={saved} className={`flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-xs hover:bg-blue-50 ${saved ? "text-rose-500" : "text-slate-600"}`}><Icon name="heart" className={`size-3.5! ${saved ? "fill-rose-100!" : ""}`} />{saved ? "Đã lưu" : "Lưu tin"}</button></div>
       </div>
       {message && <p role="status" className="mb-4 text-xs text-blue-700">{message}</p>}
+      <RoomInterest room={room} />
       <RoomGallery room={room} />
       <div className="mt-6 grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_340px] xl:grid-cols-[minmax(0,1fr)_370px]">
         <div className="min-w-0 space-y-6">
